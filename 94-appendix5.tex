@@ -1,0 +1,194 @@
+\chapter{{\fontsize{14pt}{21pt}\selectfont\MakeUppercase{Приложение Д. Листинги ключевого кода}}}
+\label{app:listings}
+
+Ниже приведены фрагменты исходного кода программного комплекса (монорепозиторий). Нумерация листингов соответствует приложению~Д.\cite{docker_compose_docs,pydantic_docs,typescript_docs}
+
+\section*{Д.1 Серверная часть}
+
+\noindent\textbf{Листинг Д.1 -- Функция подбора следующего вопроса (\texttt{backend/app/services/adaptive.py})}
+
+\begin{lstlisting}[language=Python]
+def select_next_question(db: Session, attempt: Attempt) -> Question | None:
+    questions = db.scalars(
+        select(Question).where(
+            Question.test_id == attempt.test_id,
+            Question.tenant_id == attempt.tenant_id,
+        )
+    ).all()
+    remaining = [q for q in questions if q.id not in (attempt.asked_question_ids or [])]
+    if not remaining:
+        return None
+
+    asked_ids = attempt.asked_question_ids or []
+    topic_frequency: Counter[int] = Counter()
+    if asked_ids:
+        topic_frequency.update(
+            db.scalars(
+                select(QuestionTopic.topic_id).where(QuestionTopic.question_id.in_(asked_ids))
+            )
+        )
+
+    question_topic_map: dict[int, list[int]] = defaultdict(list)
+    remaining_ids = [question.id for question in remaining]
+    if remaining_ids:
+        for question_id, topic_id in db.execute(
+            select(QuestionTopic.question_id, QuestionTopic.topic_id).where(
+                QuestionTopic.question_id.in_(remaining_ids)
+            )
+        ).all():
+            question_topic_map[question_id].append(topic_id)
+
+    def sort_key(question: Question) -> tuple[int, int, int, int]:
+        topic_ids = question_topic_map.get(question.id, [])
+        if topic_ids:
+            min_coverage = min(topic_frequency.get(topic_id, 0) for topic_id in topic_ids)
+            total_coverage = sum(topic_frequency.get(topic_id, 0) for topic_id in topic_ids)
+        else:
+            min_coverage = 0
+            total_coverage = 0
+        return (
+            abs(question.difficulty - attempt.current_difficulty),
+            min_coverage,
+            total_coverage,
+            question.id,
+        )
+
+    return sorted(remaining, key=sort_key)[0]
+\end{lstlisting}
+
+\noindent\textbf{Листинг Д.2 -- Выдача токенов доступа (\texttt{backend/app/services/auth.py})}
+
+\begin{lstlisting}[language=Python]
+def issue_tokens(db: Session, user: User) -> tuple[str, str]:
+    access = create_token(str(user.id), "access", settings.access_token_minutes)
+    refresh = create_token(str(user.id), "refresh", settings.refresh_token_minutes)
+    db.add(
+        RefreshToken(
+            user_id=user.id,
+            token=refresh,
+            expires_at=utcnow() + timedelta(minutes=settings.refresh_token_minutes),
+            revoked=False,
+        )
+    )
+    return access, refresh
+\end{lstlisting}
+
+\noindent\textbf{Листинг Д.3 -- Роли и сущности пользователя (\texttt{backend/app/models/models.py})}
+
+\begin{lstlisting}[language=Python]
+class RoleName(StrEnum):
+    learner = "learner"
+    teacher = "teacher"
+    org_admin = "org_admin"
+    system_admin = "system_admin"
+
+
+class Tenant(Base):
+    __tablename__ = "tenants"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    name: Mapped[str] = mapped_column(String(120), unique=True, index=True)
+    code: Mapped[str] = mapped_column(String(64), unique=True, index=True)
+    locale: Mapped[str] = mapped_column(String(8), default="ru")
+    is_active: Mapped[bool] = mapped_column(Boolean, default=True)
+
+
+class User(Base):
+    __tablename__ = "users"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    email: Mapped[str] = mapped_column(String(255), unique=True, index=True)
+    full_name: Mapped[str] = mapped_column(String(255))
+    password_hash: Mapped[str] = mapped_column(String(255))
+\end{lstlisting}
+
+\noindent\textbf{Листинг Д.4 -- Фрагмент сводной аналитики (\texttt{backend/app/services/analytics.py})}
+
+\begin{lstlisting}[language=Python]
+def dashboard_stats(db: Session, tenant_id: int, course_ids: list[int] | None = None) -> dict:
+    selected_course_ids = [int(course_id) for course_id in (course_ids or [])]
+    has_filter = bool(selected_course_ids)
+    enrollment_filters = [Enrollment.tenant_id == tenant_id]
+    test_filters = [Test.tenant_id == tenant_id]
+    attempt_filters = [Attempt.tenant_id == tenant_id, Attempt.status == "in_progress"]
+    course_filters = [Course.tenant_id == tenant_id]
+    if has_filter:
+        enrollment_filters.append(Enrollment.course_id.in_(selected_course_ids))
+        test_filters.append(Test.course_id.in_(selected_course_ids))
+        course_filters.append(Course.id.in_(selected_course_ids))
+    avg_progress = db.scalar(select(func.avg(Enrollment.progress_percent)).where(*enrollment_filters))
+    active_learners = (
+        db.scalar(select(func.count(func.distinct(Enrollment.user_id))).where(*enrollment_filters))
+        if has_filter
+        else db.scalar(select(func.count(Membership.id)).where(Membership.tenant_id == tenant_id))
+    )
+    return {"users": active_learners or 0, "avg_progress": int(avg_progress or 0)}
+\end{lstlisting}
+
+\section*{Д.2 Конфигурация развёртывания}
+
+\noindent\textbf{Листинг Д.5 -- Файл \texttt{docker-compose.yml} (фрагмент сервисов)}
+
+\begin{lstlisting}
+services:
+  db:
+    image: postgres:16-alpine
+    ports:
+      - "127.0.0.1:5433:5432"
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "127.0.0.1:8000:8000"
+  web:
+    build:
+      context: ./web
+    ports:
+      - "127.0.0.1:8081:80"
+\end{lstlisting}
+
+\section*{Д.3 Мобильный клиент}
+
+\noindent\textbf{Листинг Д.6 -- Экран прохождения теста (\texttt{mobile/lib/main.dart}, фрагмент)}
+
+\begin{lstlisting}[language=Java]
+class TestFlowScreen extends StatefulWidget {
+  const TestFlowScreen({
+    super.key,
+    required this.api,
+    required this.session,
+    required this.testId,
+  });
+
+  final ApiClient api;
+  final SessionState session;
+  final int testId;
+
+  @override
+  State<TestFlowScreen> createState() => _TestFlowScreenState();
+}
+
+class _TestFlowScreenState extends State<TestFlowScreen> {
+  Future<void> start() async {
+    final started =
+        await widget.api.startAttempt(widget.testId, widget.session);
+    attemptId = started['attempt_id'] as int;
+    await loadNextQuestion();
+  }
+
+  Future<void> loadNextQuestion() async {
+    final nextQuestion =
+        await widget.api.getAttemptQuestion(attemptId!, widget.session);
+    if (nextQuestion == null) {
+      await finishAttempt();
+      return;
+    }
+    setState(() {
+      question = nextQuestion;
+      questionShownAt = DateTime.now();
+    });
+  }
+}
+\end{lstlisting}
+
+\textit{Примечание: пароли, секретные ключи и продакшен-URL в листингах не приводятся; при локальной отладке используются значения из \texttt{.env.example}.}
