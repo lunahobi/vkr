@@ -1,5 +1,16 @@
 \sloppy
 
+% Поля по нормоконтролю (верх/низ 20 мм, слева 30 мм, справа 15 мм); класс G7-32 уже подключает geometry — уточняем параметры
+\geometry{a4paper,top=20mm,bottom=20mm,left=30mm,right=15mm}
+
+% Абзацный отступ 1,25 см, без дополнительного интервала между абзацами одного стиля (методичка п. 2.2.10)
+\setlength{\parindent}{1.25cm}
+\setlength{\parskip}{0pt}
+
+% Запрет висячих строк (нормоконтроль п. 35)
+\widowpenalty=10000
+\clubpenalty=10000
+
 % Настройки стиля ГОСТ 7-32
 % Для начала определяем, хотим мы или нет, чтобы рисунки и таблицы нумеровались в пределах раздела, или нам нужна сквозная нумерация.
 % \EqInChapter % формулы будут нумероваться в пределах раздела
@@ -51,12 +62,13 @@ citecolor=black, menucolor=black, filecolor=black,
 \usepackage{paralist,array}
 
 % Таблицы
+\usepackage{amsmath} % equation, \eqref
 \usepackage{array} % расширенные возможности для работы с таблицами
 \usepackage{tabularx} % автоматический подбор ширины столбцов
 \usepackage{dcolumn} % выравнивание чисел по разделителю
 
-\usepackage{setspace} % полуторный интервал
-\setstretch{1.43}
+\usepackage{setspace} % полуторный интервал (нормоконтроль п. 25)
+\setstretch{1.5}
 
 \newenvironment{compactlist}{%
     \renewcommand{\labelenumi}{\hspace{13mm}\arabic{enumi}.}
@@ -82,8 +94,6 @@ citecolor=black, menucolor=black, filecolor=black,
 \DeclareCaptionJustification{centerednohyphen}{\Centering\hyphenpenalty=10000\exhyphenpenalty=10000}
 \DeclareCaptionLabelSeparator{shortdash}{ \textendash\ }
 
-\usepackage{caption}
-
 \usepackage{float}
 \setlength{\floatsep}{0pt}
 \setlength{\textfloatsep}{0pt}
@@ -92,8 +102,6 @@ citecolor=black, menucolor=black, filecolor=black,
 \captionsetup{aboveskip=7pt,belowskip=0pt,justification=centerednohyphen,singlelinecheck=false,labelsep=shortdash}
 \captionsetup[table]{justification=RaggedRight,singlelinecheck=false}
 \captionsetup[figure]{justification=centerednohyphen,singlelinecheck=false}
-\captionsetup[listing]{justification=RaggedRight,singlelinecheck=false, position=top}
-\captionsetup[listing]{position=top}
 
 \usepackage{chngcntr}
 
@@ -114,33 +122,26 @@ leftmargin=0pt, % Reduces left outer margin
 rightmargin=0pt % Reduces right outer margin
 }
 
-\usepackage[chapter]{minted}
-
-% Configure captions for minted's listing environment
-\captionsetup[listing]{
-    position=top,
-    justification=RaggedRight,
-    singlelinecheck=false
+% Листинги кода: listings (не minted — не требует pygmentize в PATH при сборке MiKTeX)
+\usepackage{listings}
+\renewcommand{\lstlistingname}{Листинг}
+\lstset{
+  basicstyle=\ttfamily\footnotesize,
+  breaklines=true,
+  columns=fullflexible,
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  numbersep=8pt,
+  stepnumber=1,
+  frame=single,
+  framerule=0.4pt,
+  xleftmargin=2em,
+  framexleftmargin=1.2em,
+  tabsize=2,
+  showstringspaces=false,
+  extendedchars=true,
+  keepspaces=true
 }
-
-% Alternative: Force all float captions to top
-\floatstyle{plaintop}
-\restylefloat{listing}
-
-\setminted{
-    linenos=true,           % включить номера строк
-    numberblanklines=false, % не нумеровать пустые строки
-    numbersep=5pt,          % расстояние между номерами строк и кодом
-    xleftmargin=1em,        % отступ слева, чтобы номера не вылезали за границы
-    fontsize=\small,
-    breakanywhere=true,
-    breakautoindent=true,
-    breaklines=true,
-}
-
-\renewcommand{\listingscaption}{Листинг}
-\renewcommand{\listoflistingscaption}{Листинги}
-
 
 \makeatletter
 \let\oldtableofcontents\tableofcontents
@@ -160,7 +161,7 @@ rightmargin=0pt % Reduces right outer margin
 \makeatother
 
 \usepackage{etoolbox}
-\AtEndEnvironment{listing}{\vspace{-10pt}}
+\AtEndEnvironment{lstlisting}{\vspace{-6pt}}
 \AtEndEnvironment{table}{\vspace{-10pt}}
 \AtEndEnvironment{center}{\vspace{-14pt}}
 \AtEndEnvironment{figure}{\vspace{-14pt}}
@@ -181,8 +182,5 @@ rightmargin=0pt % Reduces right outer margin
 }
 \makeatother
 
-\usepackage{minted}
-\usemintedstyle{vs}
-\renewcommand{\theFancyVerbLine}{\textcolor[rgb]{0.5,0.5,1}{\scriptsize\sffamily\oldstylenums{\arabic{FancyVerbLine}}}}
 \usetikzlibrary{arrows.meta,positioning,shadows,shapes.geometric,calc}
 \usetikzlibrary{shapes.multipart}
