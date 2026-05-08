@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.1) (preloaded format=xelatex 2026.2.15)  8 MAY 2026 20:32
+This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.1) (preloaded format=xelatex 2026.2.15)  8 MAY 2026 20:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1705,26 +1705,6 @@ LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <5.5> not available
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <5.5> not available
 (Font)              size <5> substituted on input line 376.
 
-
-Overfull \hbox (5.69055pt too wide) in paragraph at lines 437--438
- []|$[]$| 
- []
-
-
-Overfull \hbox (1.9695pt too wide) in paragraph at lines 439--440
- []|\TU/TimesNewRoman(0)/m/n/12 ограничено| 
- []
-
-
-Overfull \hbox (1.9695pt too wide) in paragraph at lines 441--442
- []|\TU/TimesNewRoman(0)/m/n/12 ограничено| 
- []
-
-
-Overfull \hbox (1.9695pt too wide) in paragraph at lines 443--444
- []|\TU/TimesNewRoman(0)/m/n/12 ограничено| 
- []
-
 [29] [30] [31] [32]
 Underfull \hbox (badness 10000) in paragraph at lines 514--515
 []\TU/TimesNewRoman(0)/m/n/14.4 В административной части проекта рассматривалис
@@ -2310,11 +2290,11 @@ Package rerunfilecheck Info: File `rpz.out' has not changed.
 (rerunfilecheck)             Checksum: 73BA8C3D4A1DC3287CAEA0B1313516F4;8823.
  ) 
 Here is how much of TeX's memory you used:
- 37349 strings out of 402982
- 733838 string characters out of 5448473
- 1626604 words of memory out of 5000000
- 65356 multiletter control sequences out of 15000+600000
- 638712 words of font info for 151 fonts, out of 8000000 for 9000
+ 37356 strings out of 402982
+ 734054 string characters out of 5448473
+ 1626592 words of memory out of 5000000
+ 65361 multiletter control sequences out of 15000+600000
+ 639373 words of font info for 156 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  132i,17n,135p,1060b,1944s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
