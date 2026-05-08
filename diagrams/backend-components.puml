@@ -1,0 +1,54 @@
+@startuml
+title Backend Component Diagram — Corporate LMS
+skinparam componentStyle rectangle
+skinparam shadowing false
+
+package "FastAPI backend" {
+  [auth routes] as auth
+  [tenant routes] as tenants
+  [user routes] as users
+  [course routes] as courses
+  [media routes] as media
+  [test routes] as tests
+  [recommendation routes] as recs
+  [analytics routes] as analytics
+
+  [tenant context + RBAC] as deps
+  [adaptive service] as adaptive
+  [analytics service] as analyticssvc
+  [lesson player service] as player
+  [audit service] as audit
+  [SQLAlchemy models] as models
+}
+
+auth --> deps
+tenants --> deps
+users --> deps
+courses --> deps
+media --> deps
+tests --> deps
+recs --> deps
+analytics --> deps
+
+tests --> adaptive
+analytics --> analyticssvc
+courses --> player
+
+auth --> models
+tenants --> models
+users --> models
+courses --> models
+media --> models
+tests --> models
+recs --> models
+analytics --> models
+adaptive --> models
+analyticssvc --> models
+player --> models
+
+tests --> audit
+users --> audit
+courses --> audit
+tenants --> audit
+
+@enduml

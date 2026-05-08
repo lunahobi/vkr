@@ -1,0 +1,30 @@
+@startuml
+left to right direction
+skinparam actorStyle awesome
+skinparam shadowing false
+
+actor "Системный\nадминистратор" as SysAdmin
+actor "Администратор\nорганизации" as OrgAdmin
+actor "Преподаватель" as Teacher
+actor "Слушатель" as Learner
+
+rectangle "Corporate LMS" {
+  usecase "Управление\nорганизациями" as UC1
+  usecase "Управление\nпользователями и ролями" as UC2
+  usecase "Управление курсами,\nуроками и медиа" as UC3
+  usecase "Назначение\nкурсов" as UC4
+  usecase "Прохождение\nадаптивного теста" as UC5
+  usecase "Получение\nрекомендаций" as UC6
+  usecase "Просмотр\nаналитики" as UC7
+}
+
+SysAdmin --> UC1
+OrgAdmin --> UC2
+OrgAdmin --> UC4
+OrgAdmin --> UC7
+Teacher --> UC3
+Teacher --> UC7
+Learner --> UC5
+Learner --> UC6
+
+@enduml

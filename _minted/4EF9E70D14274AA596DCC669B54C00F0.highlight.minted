@@ -1,0 +1,9 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k}{async} \PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{tenant\PYGZus{}router}\PYG{p}{(}\PYG{n}{request}\PYG{p}{,} \PYG{n}{tenant\PYGZus{}id}\PYG{p}{:} \PYG{n+nb}{str}\PYG{p}{,} \PYG{n}{db\PYGZus{}connections}\PYG{p}{:} \PYG{n+nb}{dict}\PYG{p}{):}
+    \PYG{n}{tenant\PYGZus{}db} \PYG{o}{=} \PYG{n}{db\PYGZus{}connections}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{n}{tenant\PYGZus{}id}\PYG{p}{)}
+    \PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{tenant\PYGZus{}db}\PYG{p}{:}
+        \PYG{n}{tenant\PYGZus{}db} \PYG{o}{=} \PYG{k}{await} \PYG{n}{create\PYGZus{}tenant\PYGZus{}database}\PYG{p}{(}\PYG{n}{tenant\PYGZus{}id}\PYG{p}{)}
+        \PYG{n}{db\PYGZus{}connections}\PYG{p}{[}\PYG{n}{tenant\PYGZus{}id}\PYG{p}{]} \PYG{o}{=} \PYG{n}{tenant\PYGZus{}db}
+
+    \PYG{k}{return} \PYG{k}{await} \PYG{n}{execute\PYGZus{}query}\PYG{p}{(}\PYG{n}{tenant\PYGZus{}db}\PYG{p}{,} \PYG{n}{request}\PYG{p}{)}
+\end{MintedVerbatim}

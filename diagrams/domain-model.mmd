@@ -1,0 +1,16 @@
+erDiagram
+    TENANT ||--o{ MEMBERSHIP : contains
+    ROLE ||--o{ MEMBERSHIP : grants
+    USER ||--o{ MEMBERSHIP : participates
+    TENANT ||--o{ COURSE : owns
+    COURSE ||--o{ LESSON : contains
+    COURSE ||--o{ TEST : contains
+    TEST ||--o{ QUESTION : contains
+    QUESTION ||--o{ ANSWER_OPTION : has
+    USER ||--o{ ENROLLMENT : receives
+    COURSE ||--o{ ENROLLMENT : assigned
+    USER ||--o{ ATTEMPT : starts
+    TEST ||--o{ ATTEMPT : runs
+    ATTEMPT ||--o{ ATTEMPT_ANSWER : stores
+    ATTEMPT ||--|| RESULT : produces
+    RESULT ||--o{ RECOMMENDATION : generates

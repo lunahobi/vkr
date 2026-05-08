@@ -1,0 +1,27 @@
+@startuml
+!includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+title C4 Container Diagram — Corporate LMS
+skinparam shadowing false
+skinparam wrapWidth 220
+skinparam maxMessageSize 120
+
+Person(admin, "Администратор / преподаватель", "Управляет пользователями, курсами, уроками и аналитикой")
+Person(learner, "Слушатель", "Проходит курсы и адаптивные тесты")
+
+System_Boundary(lms, "Corporate LMS") {
+  Container(web, "Web panel", "React + TypeScript", "Административный интерфейс")
+  Container(mobile, "Mobile app", "Flutter", "Интерфейс слушателя")
+  Container(api, "Backend API", "FastAPI", "REST API, бизнес-логика, RBAC, tenant context")
+  ContainerDb(db, "Application DB", "SQLite / PostgreSQL", "Пользователи, курсы, уроки, тесты, попытки, рекомендации")
+  Container(media, "Media storage", "Static files", "Изображения и видео уроков")
+}
+
+Rel(admin, web, "Работает через браузер")
+Rel(learner, mobile, "Использует мобильное приложение")
+Rel(web, api, "Вызывает REST API", "HTTPS/JSON")
+Rel(mobile, api, "Вызывает REST API", "HTTPS/JSON")
+Rel(api, db, "Читает и изменяет данные", "SQLAlchemy")
+Rel(api, media, "Загружает и отдаёт медиа", "Static files")
+
+@enduml

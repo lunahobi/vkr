@@ -1,0 +1,27 @@
+@startuml
+title Deployment Diagram — Local Environment
+skinparam shadowing false
+
+node "User workstation" {
+  artifact "Browser" as browser
+  artifact "Flutter mobile app" as mobile
+}
+
+node "Docker host" {
+  node "docker-compose" {
+    node "backend container" as backend {
+      component "FastAPI app"
+    }
+    node "web container" as web {
+      component "React app"
+    }
+    database "postgres container" as pg
+  }
+}
+
+browser --> web : HTTP
+web --> backend : HTTPS / REST
+mobile --> backend : HTTPS / REST
+backend --> pg : SQL
+
+@enduml

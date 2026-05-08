@@ -1,0 +1,60 @@
+This is BibTeX, Version 0.99e
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: rpz.aux
+Reallocating 'name_of_file' (item size: 1) to 16 items.
+A level-1 auxiliary file: 00-abstract.aux
+Reallocating 'name_of_file' (item size: 1) to 13 items.
+A level-1 auxiliary file: 12-intro.aux
+Reallocating 'name_of_file' (item size: 1) to 16 items.
+A level-1 auxiliary file: 20-analysis.aux
+Reallocating 'name_of_file' (item size: 1) to 14 items.
+A level-1 auxiliary file: 30-design.aux
+Reallocating 'name_of_file' (item size: 1) to 14 items.
+A level-1 auxiliary file: 81-biblio.aux
+Reallocating 'name_of_file' (item size: 1) to 6 items.
+The style file: unsrt.bst
+Reallocating 'name_of_file' (item size: 1) to 4 items.
+Database file #1: rpz.bib
+Warning--empty publisher in ulikov_testing_2024
+You've used 20 entries,
+            1791 wiz_defined-function locations,
+            524 strings with 6080 characters,
+and the built_in function-call counts, 2489 in all, are:
+= -- 234
+> -- 45
+< -- 0
++ -- 28
+- -- 8
+* -- 31
+:= -- 328
+add.period$ -- 66
+call.type$ -- 20
+change.case$ -- 20
+chr.to.int$ -- 0
+cite$ -- 21
+duplicate$ -- 108
+empty$ -- 358
+format.name$ -- 8
+if$ -- 625
+int.to.chr$ -- 0
+int.to.str$ -- 20
+missing$ -- 3
+newline$ -- 109
+num.names$ -- 7
+pop$ -- 130
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 55
+stack$ -- 0
+substring$ -- 0
+swap$ -- 20
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 1
+while$ -- 7
+width$ -- 22
+write$ -- 214
+(There was 1 warning)

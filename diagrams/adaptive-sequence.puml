@@ -1,0 +1,42 @@
+@startuml
+title Sequence Diagram — Adaptive Test Flow
+skinparam shadowing false
+
+actor Learner as "Слушатель"
+participant Mobile as "Mobile client"
+participant API as "Backend API"
+participant Adaptive as "Adaptive service"
+database DB as "DB"
+
+Learner -> Mobile : Запускает тест
+Mobile -> API : POST /tests/{id}/start
+API -> DB : Создать Attempt\nbaseline_difficulty
+API --> Mobile : attempt_id, question_limit
+
+Mobile -> API : GET /attempts/{id}/next-question
+API -> Adaptive : select_next_question(attempt)
+Adaptive -> DB : Найти ближайший вопрос\nпо difficulty
+Adaptive --> API : Question
+API --> Mobile : question payload
+
+Learner -> Mobile : Отправляет ответ
+Mobile -> API : POST /attempts/{id}/submit-answer
+API -> Adaptive : evaluate_answer(...)
+Adaptive -> DB : Сохранить AttemptAnswer\nобновить difficulty_path
+Adaptive --> API : current_difficulty,\nremaining_questions
+API --> Mobile : progress payload
+
+loop Пока не достигнут лимит вопросов
+  Mobile -> API : GET next-question
+  API -> Adaptive : select_next_question()
+  Adaptive --> API : Question / none
+  API --> Mobile : Следующий вопрос
+end
+
+Mobile -> API : POST /attempts/{id}/finish
+API -> Adaptive : finalize_attempt(attempt)
+Adaptive -> DB : Сохранить Result\nи Recommendation
+Adaptive --> API : summary + recommendations
+API --> Mobile : Итог попытки
+
+@enduml

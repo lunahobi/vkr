@@ -1,0 +1,136 @@
+\begin{thebibliography}{10}
+
+\bibitem{moodle_lms}
+Moodle lms.
+\newblock \url{https://moodle.org/}, 2026.
+\newblock [Электронный ресурс]. Дата обращения:
+  15.02.2026.
+
+\bibitem{mobile_learning_solutions_2024}
+{Vocal Media}.
+\newblock Mobile learning solutions in 2024: Trends and innovations.
+\newblock
+  \url{https://vocal.media/education/mobile-learning-solutions-in-2024-trends-and-innovations},
+  2024.
+\newblock [Электронный ресурс]. Дата обращения:
+  15.02.2026.
+
+\bibitem{educause_adaptive_2016}
+Michael Feldstein et~al.
+\newblock Adaptive learning systems: Surviving the storm.
+\newblock {\em EDUCAUSE Review}, 2016.
+\newblock [Электронный ресурс]. Дата обращения:
+  15.02.2026.
+
+\bibitem{yojji_multitenant_lms_2025}
+{Yojji}.
+\newblock Multi-tenant lms: The complete technical and business guide.
+\newblock \url{https://yojji.io/blog/multi-tenant-lms}, 2025.
+\newblock [Электронный ресурс]. Дата обращения:
+  15.02.2026.
+
+\bibitem{metodichka_vkr_ikt_2021}
+Методические рекомендации по подготовке
+  выпускных квалификационных работ (09.03.01,
+  09.03.03), 2021.
+\newblock Московский политехнический
+  университет.
+
+\bibitem{opigno_mobile_lms_2024}
+{Opigno LMS}.
+\newblock Finding the perfect mobile lms app: Features checklist.
+\newblock
+  \url{https://www.opigno.org/blog/finding-perfect-mobile-lms-app-features-checklist},
+  2024.
+\newblock [Электронный ресурс]. Дата обращения:
+  15.02.2026.
+
+\bibitem{moodle_multitenancy_2024}
+{Moodle US}.
+\newblock A guide to lms multi-tenancy: Do you need it?
+\newblock \url{https://moodle.com/us/news/lms-multi-tenancy/}, 2024.
+\newblock [Электронный ресурс]. Дата обращения:
+  15.02.2026.
+
+\bibitem{open_lms}
+Open lms: The open source lms that fits your needs.
+\newblock \url{https://www.openlms.net/}, 2026.
+\newblock [Электронный ресурс]. Дата обращения:
+  15.02.2026.
+
+\bibitem{moodle_app}
+Moodle app.
+\newblock \url{https://apps.apple.com/app/moodle/id633359593}, 2026.
+\newblock [Электронный ресурс]. Дата обращения:
+  15.02.2026.
+
+\bibitem{ulikov_testing_2024}
+Святослав~Александрович Куликов.
+\newblock {\em Тестирование программного
+  обеспечения. Базовый курс}.
+\newblock 3 edition, 2024.
+\newblock Версия 3.2.6 от 24.05.2024.
+
+\bibitem{moodlecloud}
+Moodlecloud: Cloud lms.
+\newblock \url{https://moodlecloud.com/}, 2026.
+\newblock [Электронный ресурс]. Дата обращения:
+  15.02.2026.
+
+\bibitem{docebo_adaptive_2026}
+{Docebo Learning Network}.
+\newblock Adaptive learning: What it is, benefits \& how it works.
+\newblock
+  \url{https://www.docebo.com/learning-network/blog/adaptive-learning/}, 2026.
+\newblock [Электронный ресурс]. Дата обращения:
+  15.02.2026.
+
+\bibitem{fastapi_docs}
+Fastapi documentation.
+\newblock \url{https://fastapi.tiangolo.com/}, 2026.
+\newblock [Электронный ресурс]. Дата обращения:
+  15.02.2026.
+
+\bibitem{django_rest_framework}
+Django rest framework.
+\newblock \url{https://www.django-rest-framework.org/}, 2026.
+\newblock [Электронный ресурс]. Дата обращения:
+  15.02.2026.
+
+\bibitem{react_docs}
+React: Documentation.
+\newblock \url{https://react.dev/}, 2026.
+\newblock [Электронный ресурс]. Дата обращения:
+  15.02.2026.
+
+\bibitem{typescript_docs}
+Typescript documentation.
+\newblock \url{https://www.typescriptlang.org/docs/}, 2026.
+\newblock [Электронный ресурс]. Дата обращения:
+  10.04.2026.
+
+\bibitem{flutter_docs}
+Flutter documentation.
+\newblock \url{https://docs.flutter.dev/}, 2026.
+\newblock [Электронный ресурс]. Дата обращения:
+  15.02.2026.
+
+\bibitem{sqlite_docs}
+Sqlite documentation.
+\newblock \url{https://sqlite.org/docs.html}, 2026.
+\newblock [Электронный ресурс]. Дата обращения:
+  10.04.2026.
+
+\bibitem{postgresql_docs}
+Postgresql documentation.
+\newblock \url{https://www.postgresql.org/docs/}, 2026.
+\newblock [Электронный ресурс]. Дата обращения:
+  15.02.2026.
+
+\bibitem{docker_compose_docs}
+Docker compose documentation.
+\newblock \url{https://docs.docker.com/reference/compose-file/}, 2026.
+\newblock [Электронный ресурс]. Дата обращения:
+  10.04.2026.
+
+\end{thebibliography}

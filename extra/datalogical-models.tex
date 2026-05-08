@@ -1,0 +1,139 @@
+\tikzset{
+  dbbox/.style={
+    draw,
+    rounded corners=2pt,
+    fill=gray!6,
+    align=left,
+    font=\scriptsize,
+    text width=36mm,
+    inner sep=4pt
+  },
+  refbox/.style={
+    dbbox,
+    fill=gray!14
+  },
+  dblink/.style={
+    -{Latex[length=2mm]},
+    line width=0.35pt
+  }
+}
+
+\begin{figure}[H]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tikzpicture}
+\node[refbox] (roles) at (-5.1,3.2) {\textbf{roles}\\PK \texttt{id}\\\texttt{name}\\\texttt{description}};
+\node[refbox] (tenants) at (0,3.2) {\textbf{tenants}\\PK \texttt{id}\\\texttt{name}\\\texttt{code}\\\texttt{locale}\\\texttt{is\_active}};
+\node[refbox] (users) at (5.1,3.2) {\textbf{users}\\PK \texttt{id}\\\texttt{email}\\\texttt{full\_name}\\\texttt{password\_hash}\\\texttt{preferred\_locale}\\\texttt{is\_active}};
+\node[dbbox] (memberships) at (0,0.4) {\textbf{memberships}\\PK \texttt{id}\\FK \texttt{user\_id}\\FK \texttt{tenant\_id}\\FK \texttt{role\_id}\\\texttt{is\_active}\\UQ (\texttt{user\_id}, \texttt{tenant\_id})};
+\node[dbbox] (groups) at (-3.2,-2.7) {\textbf{groups}\\PK \texttt{id}\\FK \texttt{tenant\_id}\\\texttt{name}};
+\node[dbbox] (groupmembers) at (3.2,-2.7) {\textbf{group\_members}\\PK \texttt{id}\\FK \texttt{tenant\_id}\\FK \texttt{group\_id}\\FK \texttt{user\_id}\\UQ (\texttt{group\_id}, \texttt{user\_id})};
+
+\draw[dblink] (memberships.north west) -- (roles.south east);
+\draw[dblink] (memberships.north) -- (tenants.south);
+\draw[dblink] (memberships.north east) -- (users.south west);
+\draw[dblink] (groups.north) -- (tenants.south west);
+\draw[dblink] (groupmembers.north west) -- (groups.south east);
+\draw[dblink] (groupmembers.north) -- (tenants.south east);
+\draw[dblink] (groupmembers.north east) -- (users.south);
+\end{tikzpicture}%
+}
+\caption{Даталогическая модель базы данных: идентификация и разграничение доступа}
+\label{fig:design-datalogical-access}
+\end{figure}
+
+\clearpage
+\begin{landscape}
+\begin{figure}[H]
+\centering
+\resizebox{0.72\paperheight}{!}{%
+\begin{tikzpicture}
+\node[refbox] (users) at (-6.4,1.8) {\textbf{users}\\PK \texttt{id}};
+\node[refbox] (groups) at (-6.4,-1.2) {\textbf{groups}\\PK \texttt{id}};
+\node[refbox] (tenants) at (0,4.1) {\textbf{tenants}\\PK \texttt{id}};
+\node[dbbox] (courses) at (0,1.8) {\textbf{courses}\\PK \texttt{id}\\FK \texttt{tenant\_id}\\FK \texttt{created\_by\_id}\\\texttt{title}\\\texttt{description}\\\texttt{is\_published}};
+\node[dbbox] (topics) at (5.4,1.8) {\textbf{topics}\\PK \texttt{id}\\FK \texttt{tenant\_id}\\\texttt{title}\\\texttt{description}};
+\node[dbbox] (courseassign) at (-2.1,-1.2) {\textbf{course\_assignments}\\PK \texttt{id}\\FK \texttt{tenant\_id}\\FK \texttt{course\_id}\\FK \texttt{assigned\_by\_id}\\FK \texttt{user\_id} / \texttt{group\_id}};
+\node[dbbox] (enrollments) at (2.1,-1.2) {\textbf{enrollments}\\PK \texttt{id}\\FK \texttt{tenant\_id}\\FK \texttt{course\_id}\\FK \texttt{user\_id}\\\texttt{progress\_percent}\\\texttt{completed}};
+\node[dbbox] (lessons) at (5.4,-1.2) {\textbf{lessons}\\PK \texttt{id}\\FK \texttt{tenant\_id}\\FK \texttt{course\_id}\\FK \texttt{topic\_id}\\\texttt{content\_pages}\\\texttt{sort\_order}};
+\node[dbbox] (progress) at (4.8,-4.1) {\textbf{lesson\_progresses}\\PK \texttt{id}\\FK \texttt{tenant\_id}\\FK \texttt{user\_id}\\FK \texttt{course\_id}\\FK \texttt{lesson\_id}\\\texttt{current\_page\_index}\\\texttt{is\_completed}};
+
+\draw[dblink] (courses.north) -- (tenants.south);
+\draw[dblink] (topics.north west) -- (tenants.south east);
+\draw[dblink] (courseassign.north east) -- (courses.south west);
+\draw[dblink] (courseassign.west) -- (groups.east);
+\draw[dblink] (courseassign.north west) -- (users.south east);
+\draw[dblink] (enrollments.north west) -- (courses.south east);
+\draw[dblink] (enrollments.west) -- (users.east);
+\draw[dblink] (lessons.north) -- (topics.south);
+\draw[dblink] (lessons.west) -- (courses.east);
+\draw[dblink] (progress.north) -- (lessons.south);
+\draw[dblink] (progress.west) -- (enrollments.south east);
+\draw[dblink] (progress.north west) -- (users.south);
+\end{tikzpicture}%
+}
+\caption{Даталогическая модель базы данных: учебный контент, назначения и прогресс}
+\label{fig:design-datalogical-content}
+\end{figure}
+
+\end{landscape}
+\clearpage
+\begin{landscape}
+\begin{figure}[H]
+\centering
+\resizebox{0.72\paperheight}{!}{%
+\begin{tikzpicture}
+\node[refbox] (courses) at (-5.7,4.0) {\textbf{courses}\\PK \texttt{id}};
+\node[refbox] (topics) at (5.7,4.0) {\textbf{topics}\\PK \texttt{id}};
+\node[refbox] (users) at (-6.8,-0.4) {\textbf{users}\\PK \texttt{id}};
+\node[refbox] (lessons) at (7.0,-2.9) {\textbf{lessons}\\PK \texttt{id}};
+\node[dbbox] (tests) at (0,4.0) {\textbf{tests}\\PK \texttt{id}\\FK \texttt{tenant\_id}\\FK \texttt{course\_id}\\\texttt{baseline\_difficulty}\\\texttt{question\_limit}};
+\node[dbbox] (questions) at (0,1.3) {\textbf{questions}\\PK \texttt{id}\\FK \texttt{tenant\_id}\\FK \texttt{test\_id}\\\texttt{text}\\\texttt{difficulty}\\\texttt{estimated\_seconds}};
+\node[dbbox] (options) at (-4.8,1.3) {\textbf{answer\_options}\\PK \texttt{id}\\FK \texttt{question\_id}\\\texttt{text}\\\texttt{is\_correct}};
+\node[dbbox] (qtopics) at (4.8,1.3) {\textbf{question\_topics}\\PK \texttt{id}\\FK \texttt{tenant\_id}\\FK \texttt{question\_id}\\FK \texttt{topic\_id}\\UQ (\texttt{question\_id}, \texttt{topic\_id})};
+\node[dbbox] (attempts) at (-0.8,-1.4) {\textbf{attempts}\\PK \texttt{id}\\FK \texttt{tenant\_id}\\FK \texttt{test\_id}\\FK \texttt{user\_id}\\\texttt{current\_difficulty}\\\texttt{asked\_question\_ids}\\\texttt{difficulty\_path}};
+\node[dbbox] (aanswers) at (-4.8,-4.1) {\textbf{attempt\_answers}\\PK \texttt{id}\\FK \texttt{tenant\_id}\\FK \texttt{attempt\_id}\\FK \texttt{question\_id}\\FK \texttt{answer\_option\_id}\\\texttt{is\_correct}\\\texttt{response\_seconds}};
+\node[dbbox] (results) at (3.6,-1.4) {\textbf{results}\\PK \texttt{id}\\FK \texttt{tenant\_id}\\FK \texttt{attempt\_id}\\UQ (\texttt{attempt\_id})\\\texttt{score\_percent}\\\texttt{weak\_topics}};
+\node[dbbox] (recs) at (3.6,-4.1) {\textbf{recommendations}\\PK \texttt{id}\\FK \texttt{tenant\_id}\\FK \texttt{user\_id}\\FK \texttt{result\_id}\\FK \texttt{topic\_id}\\FK \texttt{lesson\_id}\\\texttt{priority}};
+
+\draw[dblink] (tests.west) -- (courses.east);
+\draw[dblink] (questions.north) -- (tests.south);
+\draw[dblink] (options.east) -- (questions.west);
+\draw[dblink] (qtopics.west) -- (questions.east);
+\draw[dblink] (qtopics.north) -- (topics.south);
+\draw[dblink] (attempts.north) -- (questions.south);
+\draw[dblink] (attempts.west) -- (users.east);
+\draw[dblink] (aanswers.north) -- (attempts.south west);
+\draw[dblink] (aanswers.north east) -- (questions.south west);
+\draw[dblink] (results.west) -- (attempts.east);
+\draw[dblink] (recs.north) -- (results.south);
+\draw[dblink] (recs.north east) -- (lessons.west);
+\draw[dblink] (recs.north west) -- (topics.south);
+\end{tikzpicture}%
+}
+\caption{Даталогическая модель базы данных: тестирование, результаты и рекомендации}
+\label{fig:design-datalogical-testing}
+\end{figure}
+
+\end{landscape}
+\clearpage
+\begin{figure}[H]
+\centering
+\resizebox{0.82\textwidth}{!}{%
+\begin{tikzpicture}
+\node[refbox] (users) at (-4.2,2.8) {\textbf{users}\\PK \texttt{id}};
+\node[refbox] (tenants) at (4.2,2.8) {\textbf{tenants}\\PK \texttt{id}};
+\node[dbbox] (tokens) at (0,2.8) {\textbf{refresh\_tokens}\\PK \texttt{id}\\FK \texttt{user\_id}\\\texttt{token}\\\texttt{expires\_at}\\\texttt{revoked}};
+\node[dbbox] (audit) at (-2.4,-1.0) {\textbf{audit\_logs}\\PK \texttt{id}\\FK \texttt{tenant\_id}\\FK \texttt{actor\_user\_id}\\\texttt{action}\\\texttt{entity\_type}\\\texttt{entity\_id}\\\texttt{created\_at}};
+\node[dbbox] (notify) at (2.4,-1.0) {\textbf{notification\_deliveries}\\PK \texttt{id}\\FK \texttt{tenant\_id}\\FK \texttt{user\_id}\\\texttt{channel}\\\texttt{payload}\\\texttt{status}};
+
+\draw[dblink] (tokens.west) -- (users.east);
+\draw[dblink] (audit.north) -- (users.south east);
+\draw[dblink] (audit.north east) -- (tenants.south west);
+\draw[dblink] (notify.north west) -- (users.south);
+\draw[dblink] (notify.north) -- (tenants.south);
+\end{tikzpicture}%
+}
+\caption{Даталогическая модель базы данных: служебные таблицы безопасности, аудита и уведомлений}
+\label{fig:design-datalogical-service}
+\end{figure}
