@@ -1,136 +1,433 @@
 \begin{thebibliography}{10}
-
-\bibitem{moodle_lms}
-Moodle lms.
-\newblock \url{https://moodle.org/}, 2026.
-\newblock [Электронный ресурс]. Дата обращения:
-  15.02.2026.
-
-\bibitem{mobile_learning_solutions_2024}
-{Vocal Media}.
-\newblock Mobile learning solutions in 2024: Trends and innovations.
-\newblock
-  \url{https://vocal.media/education/mobile-learning-solutions-in-2024-trends-and-innovations},
-  2024.
-\newblock [Электронный ресурс]. Дата обращения:
-  15.02.2026.
-
-\bibitem{educause_adaptive_2016}
-Michael Feldstein et~al.
-\newblock Adaptive learning systems: Surviving the storm.
-\newblock {\em EDUCAUSE Review}, 2016.
-\newblock [Электронный ресурс]. Дата обращения:
-  15.02.2026.
-
-\bibitem{yojji_multitenant_lms_2025}
-{Yojji}.
-\newblock Multi-tenant lms: The complete technical and business guide.
-\newblock \url{https://yojji.io/blog/multi-tenant-lms}, 2025.
-\newblock [Электронный ресурс]. Дата обращения:
-  15.02.2026.
+\def\selectlanguageifdefined#1{
+\expandafter\ifx\csname date#1\endcsname\relax
+\else\language\csname l@#1\endcsname\fi}
+\ifx\undefined\url\def\url#1{{\small #1}}\else\fi
+\ifx\undefined\BibUrl\def\BibUrl#1{\url{#1}}\else\fi
+\ifx\undefined\BibAnnote\long\def\BibAnnote#1{}\else\fi
+\ifx\undefined\BibEmph\def\BibEmph#1{\emph{#1}}\else\fi
 
 \bibitem{metodichka_vkr_ikt_2021}
+\selectlanguageifdefined{english}
 Методические рекомендации по подготовке
   выпускных квалификационных работ (09.03.01,
-  09.03.03), 2021.
-\newblock Московский политехнический
-  университет.
+  09.03.03). --
+\newblock 2021.
+
+\bibitem{gost7322017}
+\selectlanguageifdefined{english}
+ГОСТ 7.32---2017. Система стандартов по
+  информации, библиотечному и
+  издательскому делу. Отчёт о
+  научно-исследовательской работе.
+  Структура и правила оформления. --
+\newblock Москва: Стандартинформ, 2017.
+
+\bibitem{gost1920178}
+\selectlanguageifdefined{english}
+ГОСТ 19.201---78. Единая система программной
+  документации. Техническое задание.
+  Требования к содержанию и оформлению. --
+\newblock Москва: ИПК Издательство стандартов,
+  1978.
+
+\bibitem{gost1930179}
+\selectlanguageifdefined{english}
+ГОСТ 19.301---79. Единая система программной
+  документации. Программа и методика
+  испытаний. Требования к содержанию и
+  оформлению. --
+\newblock Москва: ИПК Издательство стандартов,
+  1979.
+
+\bibitem{van_der_linden1997}
+\selectlanguageifdefined{english}
+Handbook of Modern Item Response Theory~/ Ed. by Wim~J.~van~der~Linden,
+  Ronald~K.~Hambleton. --
+\newblock New York: Springer, 1997.
+
+\bibitem{wainer2000}
+\selectlanguageifdefined{english}
+Computerized Adaptive Testing: A Primer~/ Howard~Wainer, Neil~J.~Dorans,
+  David~Eignor et~al. --
+\newblock 2 edition. --
+\newblock Mahwah, NJ: Lawrence Erlbaum Associates, 2000.
+
+\bibitem{mobile_learning_solutions_2024}
+\selectlanguageifdefined{english}
+{{Vocal Media}}. Mobile Learning Solutions in 2024: Trends and Innovations. --
+\newblock
+  \url{https://vocal.media/education/mobile-learning-solutions-in-2024-trends-and-innovations}.
+  --
+\newblock 2024. --
+\newblock Электронный ресурс. Дата обращения:
+  15.02.2026.
 
 \bibitem{opigno_mobile_lms_2024}
-{Opigno LMS}.
-\newblock Finding the perfect mobile lms app: Features checklist.
+\selectlanguageifdefined{english}
+{{Opigno LMS}}. Finding the Perfect Mobile LMS App: Features Checklist. --
 \newblock
-  \url{https://www.opigno.org/blog/finding-perfect-mobile-lms-app-features-checklist},
-  2024.
-\newblock [Электронный ресурс]. Дата обращения:
+  \url{https://www.opigno.org/blog/finding-perfect-mobile-lms-app-features-checklist}.
+  --
+\newblock 2024. --
+\newblock Электронный ресурс. Дата обращения:
   15.02.2026.
 
 \bibitem{moodle_multitenancy_2024}
-{Moodle US}.
-\newblock A guide to lms multi-tenancy: Do you need it?
-\newblock \url{https://moodle.com/us/news/lms-multi-tenancy/}, 2024.
-\newblock [Электронный ресурс]. Дата обращения:
+\selectlanguageifdefined{english}
+{{Moodle US}}. A guide to LMS multi-tenancy: Do you need it? --
+\newblock \url{https://moodle.com/us/news/lms-multi-tenancy/}. --
+\newblock 2024. --
+\newblock Электронный ресурс. Дата обращения:
+  15.02.2026.
+
+\bibitem{yojji_multitenant_lms_2025}
+\selectlanguageifdefined{english}
+{{Yojji}}. Multi-Tenant LMS: The Complete Technical and Business Guide. --
+\newblock \url{https://yojji.io/blog/multi-tenant-lms}. --
+\newblock 2025. --
+\newblock Электронный ресурс. Дата обращения:
+  15.02.2026.
+
+\bibitem{grekul_proj_is}
+\selectlanguageifdefined{english}
+{Грекул,~Владимир~Иванович}. Проектирование
+  информационных систем: учебное пособие~/
+  Владимир~Иванович~Грекул,
+  Галина~Николаевна~Денищенко,
+  Наталья~Леонидовна~Коровкина. --
+\newblock 3 edition. --
+\newblock Москва: ИД «ФОРУМ», 2022.
+
+\bibitem{ulikov_testing_2024}
+\selectlanguageifdefined{english}
+{Куликов,~Святослав~Александрович}.
+  Тестирование программного обеспечения.
+  Базовый курс~/
+  Святослав~Александрович~Куликов. --
+\newblock 3 edition. --
+\newblock Москва: Лаборатория знаний, 2024.
+
+\bibitem{gost7052008}
+\selectlanguageifdefined{english}
+ГОСТ Р 7.0.5---2008. Система стандартов по
+  информации, библиотечному и
+  издательскому делу. Библиографическая
+  ссылка. Общие требования и правила
+  составления. --
+\newblock Москва: Стандартинформ, 2008.
+
+\bibitem{gost712003}
+\selectlanguageifdefined{english}
+ГОСТ 7.1---2003. Система стандартов по
+  информации, библиотечному и
+  издательскому делу. Библиографическая
+  запись. Библиографическое описание. Общие
+  требования и правила составления. --
+\newblock Москва: ИПК Издательство стандартов,
+  2003.
+
+\bibitem{gost21052019}
+\selectlanguageifdefined{english}
+ГОСТ 2.105---2019. Единая система
+  конструкторской документации. Общие
+  требования к текстовым документам. --
+\newblock Москва: Стандартинформ, 2019.
+
+\bibitem{gost3460190}
+\selectlanguageifdefined{english}
+ГОСТ 34.601---90. Информационная технология.
+  Комплекс стандартов на
+  автоматизированные системы.
+  Автоматизированные системы. Стадии
+  создания. --
+\newblock Москва: Издательство стандартов, 1990.
+
+\bibitem{gost250102015}
+\selectlanguageifdefined{english}
+ГОСТ Р ИСО/МЭК 25010---2015. Информационные
+  технологии. Системная и программная
+  инженерия. Требования и оценка качества
+  систем и программного обеспечения (SQuaRE). --
+\newblock Москва: Стандартинформ, 2015.
+
+\bibitem{gost509222006}
+\selectlanguageifdefined{english}
+ГОСТ Р 50922---2006. Защита информации. Основные
+  термины и определения. --
+\newblock Москва: Стандартинформ, 2006.
+
+\bibitem{fz152}
+\selectlanguageifdefined{english}
+Федеральный закон от 27.07.2006 № 152-ФЗ «О
+  персональных данных». --
+\newblock 2006. --
+\newblock Российская газета, Федеральный закон;
+  редакция по состоянию на 2025 г.
+
+\bibitem{fowler_patterns_ru}
+\selectlanguageifdefined{english}
+{Фаулер,~Мартин}. Архитектура корпоративных
+  программных приложений~/ Мартин~Фаулер. --
+\newblock Москва: Вильямс, 2021.
+
+\bibitem{date_intro_db_ru}
+\selectlanguageifdefined{english}
+{Дейт,~Клайв~Дж.} Введение в системы баз
+  данных~/ Клайв~Дж.~Дейт. --
+\newblock 8 edition. --
+\newblock Москва: Вильямс, 2020.
+
+\bibitem{sommerville2019software}
+\selectlanguageifdefined{english}
+{Соммервилл,~Ян}. Инженерия программного
+  обеспечения~/ Ян~Соммервилл. --
+\newblock 10 edition. --
+\newblock Москва: Вильямс, 2019.
+
+\bibitem{makkakov_allfusion}
+\selectlanguageifdefined{english}
+{Маклаков,~Сергей~Владимирович}. Создание
+  информационных систем с AllFusion Modeling Suite~/
+  Сергей~Владимирович~Маклаков. --
+\newblock Москва: ДМК Пресс, 2007.
+
+\bibitem{kaner_testing_en}
+\selectlanguageifdefined{english}
+{Kaner,~Cem}. Lessons Learned in Software Testing: A Context-Driven Approach~/
+  Cem~Kaner, James~Bach, Bret~Pettichord. --
+\newblock 1 edition. --
+\newblock New York: John Wiley \& Sons, 2002.
+
+\bibitem{lord1980}
+\selectlanguageifdefined{english}
+{Lord,~Frederic~M.} Applications of Item Response Theory to Practical Testing
+  Problems~/ Frederic~M.~Lord. --
+\newblock Hillsdale, NJ: Lawrence Erlbaum Associates, 1980.
+
+\bibitem{fastapi_docs}
+\selectlanguageifdefined{english}
+FastAPI Documentation. --
+\newblock \url{https://fastapi.tiangolo.com/}. --
+\newblock 2026. --
+\newblock Электронный ресурс. Дата обращения:
+  15.02.2026.
+
+\bibitem{postgresql_docs}
+\selectlanguageifdefined{english}
+PostgreSQL Documentation. --
+\newblock \url{https://www.postgresql.org/docs/}. --
+\newblock 2026. --
+\newblock Электронный ресурс. Дата обращения:
+  15.02.2026.
+
+\bibitem{flutter_docs}
+\selectlanguageifdefined{english}
+Flutter Documentation. --
+\newblock \url{https://docs.flutter.dev/}. --
+\newblock 2026. --
+\newblock Электронный ресурс. Дата обращения:
+  15.02.2026.
+
+\bibitem{pydantic_docs}
+\selectlanguageifdefined{english}
+Pydantic Documentation. --
+\newblock \url{https://docs.pydantic.dev/}. --
+\newblock 2026. --
+\newblock Электронный ресурс. Дата обращения:
+  08.05.2026.
+
+\bibitem{sqlalchemy_docs}
+\selectlanguageifdefined{english}
+SQLAlchemy Documentation. --
+\newblock \url{https://docs.sqlalchemy.org/}. --
+\newblock 2026. --
+\newblock Электронный ресурс. Дата обращения:
+  08.05.2026.
+
+\bibitem{moodle_lms}
+\selectlanguageifdefined{english}
+Moodle LMS. --
+\newblock \url{https://moodle.org/}. --
+\newblock 2026. --
+\newblock Электронный ресурс. Дата обращения:
   15.02.2026.
 
 \bibitem{open_lms}
-Open lms: The open source lms that fits your needs.
-\newblock \url{https://www.openlms.net/}, 2026.
-\newblock [Электронный ресурс]. Дата обращения:
+\selectlanguageifdefined{english}
+Open LMS: The Open Source LMS That Fits Your Needs. --
+\newblock \url{https://www.openlms.net/}. --
+\newblock 2026. --
+\newblock Электронный ресурс. Дата обращения:
   15.02.2026.
 
 \bibitem{moodle_app}
-Moodle app.
-\newblock \url{https://apps.apple.com/app/moodle/id633359593}, 2026.
-\newblock [Электронный ресурс]. Дата обращения:
+\selectlanguageifdefined{english}
+Moodle App. --
+\newblock \url{https://apps.apple.com/app/moodle/id633359593}. --
+\newblock 2026. --
+\newblock Электронный ресурс. Дата обращения:
   15.02.2026.
 
-\bibitem{ulikov_testing_2024}
-Святослав~Александрович Куликов.
-\newblock {\em Тестирование программного
-  обеспечения. Базовый курс}.
-\newblock 3 edition, 2024.
-\newblock Версия 3.2.6 от 24.05.2024.
-
 \bibitem{moodlecloud}
-Moodlecloud: Cloud lms.
-\newblock \url{https://moodlecloud.com/}, 2026.
-\newblock [Электронный ресурс]. Дата обращения:
+\selectlanguageifdefined{english}
+MoodleCloud: Cloud LMS. --
+\newblock \url{https://moodlecloud.com/}. --
+\newblock 2026. --
+\newblock Электронный ресурс. Дата обращения:
   15.02.2026.
 
 \bibitem{docebo_adaptive_2026}
-{Docebo Learning Network}.
-\newblock Adaptive learning: What it is, benefits \& how it works.
+\selectlanguageifdefined{english}
+{{Docebo Learning Network}}. Adaptive Learning: What It Is, Benefits \& How It
+  Works. --
 \newblock
-  \url{https://www.docebo.com/learning-network/blog/adaptive-learning/}, 2026.
-\newblock [Электронный ресурс]. Дата обращения:
-  15.02.2026.
-
-\bibitem{fastapi_docs}
-Fastapi documentation.
-\newblock \url{https://fastapi.tiangolo.com/}, 2026.
-\newblock [Электронный ресурс]. Дата обращения:
+  \url{https://www.docebo.com/learning-network/blog/adaptive-learning/}. --
+\newblock 2026. --
+\newblock Электронный ресурс. Дата обращения:
   15.02.2026.
 
 \bibitem{django_rest_framework}
-Django rest framework.
-\newblock \url{https://www.django-rest-framework.org/}, 2026.
-\newblock [Электронный ресурс]. Дата обращения:
+\selectlanguageifdefined{english}
+Django REST Framework. --
+\newblock \url{https://www.django-rest-framework.org/}. --
+\newblock 2026. --
+\newblock Электронный ресурс. Дата обращения:
   15.02.2026.
 
 \bibitem{react_docs}
-React: Documentation.
-\newblock \url{https://react.dev/}, 2026.
-\newblock [Электронный ресурс]. Дата обращения:
+\selectlanguageifdefined{english}
+React: Documentation. --
+\newblock \url{https://react.dev/}. --
+\newblock 2026. --
+\newblock Электронный ресурс. Дата обращения:
   15.02.2026.
 
 \bibitem{typescript_docs}
-Typescript documentation.
-\newblock \url{https://www.typescriptlang.org/docs/}, 2026.
-\newblock [Электронный ресурс]. Дата обращения:
+\selectlanguageifdefined{english}
+TypeScript Documentation. --
+\newblock \url{https://www.typescriptlang.org/docs/}. --
+\newblock 2026. --
+\newblock Электронный ресурс. Дата обращения:
   10.04.2026.
-
-\bibitem{flutter_docs}
-Flutter documentation.
-\newblock \url{https://docs.flutter.dev/}, 2026.
-\newblock [Электронный ресурс]. Дата обращения:
-  15.02.2026.
 
 \bibitem{sqlite_docs}
-Sqlite documentation.
-\newblock \url{https://sqlite.org/docs.html}, 2026.
-\newblock [Электронный ресурс]. Дата обращения:
+\selectlanguageifdefined{english}
+SQLite Documentation. --
+\newblock \url{https://sqlite.org/docs.html}. --
+\newblock 2026. --
+\newblock Электронный ресурс. Дата обращения:
   10.04.2026.
-
-\bibitem{postgresql_docs}
-Postgresql documentation.
-\newblock \url{https://www.postgresql.org/docs/}, 2026.
-\newblock [Электронный ресурс]. Дата обращения:
-  15.02.2026.
 
 \bibitem{docker_compose_docs}
-Docker compose documentation.
-\newblock \url{https://docs.docker.com/reference/compose-file/}, 2026.
-\newblock [Электронный ресурс]. Дата обращения:
+\selectlanguageifdefined{english}
+Docker Compose Documentation. --
+\newblock \url{https://docs.docker.com/reference/compose-file/}. --
+\newblock 2026. --
+\newblock Электронный ресурс. Дата обращения:
   10.04.2026.
+
+\bibitem{martin_clean_architecture_ru}
+\selectlanguageifdefined{english}
+{Мартин,~Роберт}. Чистая архитектура.
+  Искусство разработки программного
+  обеспечения~/ Роберт~Мартин. --
+\newblock СПб.: Питер, 2018.
+
+\bibitem{booch2006uml}
+\selectlanguageifdefined{english}
+{Буч,~Гради}. Язык UML. Руководство
+  пользователя~/ Гради~Буч, Джеймс~Рамбо,
+  Айвар~Джекобсон. --
+\newblock 2 edition. --
+\newblock Москва: ДМК Пресс, 2006.
+
+\bibitem{iso29119}
+\selectlanguageifdefined{english}
+ISO/IEC/IEEE 29119-2:2021. Software and systems engineering --- Software
+  testing --- Part 2: Test processes. --
+\newblock 2021. --
+\newblock Международный стандарт на бумажном
+  носителе и через каналы ISO.
+
+\bibitem{stepanov_db}
+\selectlanguageifdefined{english}
+{Степанов,~Владимир~Анатольевич}.
+  Проектирование баз данных: учебное
+  пособие~/ Владимир~Анатольевич~Степанов. --
+\newblock Москва: Академия, 2021.
+
+\bibitem{proprofs_multitenant_lms_2025}
+\selectlanguageifdefined{english}
+{{ProProfs Training}}. Multi-Tenant LMS Guide 2025: Architecture, Features, and
+  Use Cases. --
+\newblock \url{https://www.proprofstraining.com/blog/multi-tenant-lms/}. --
+\newblock 2025. --
+\newblock Электронный ресурс. Дата обращения:
+  15.02.2026.
+
+\bibitem{microsoft_multitenant_arch}
+\selectlanguageifdefined{english}
+{{Microsoft}}. Architect multitenant solutions on Azure. --
+\newblock
+  \url{https://learn.microsoft.com/azure/architecture/guide/multitenant/overview}.
+  --
+\newblock 2024. --
+\newblock Электронный ресурс. Дата обращения:
+  08.05.2026.
+
+\bibitem{cooper2008aboutface}
+\selectlanguageifdefined{english}
+{Купер,~Алан}. Об интерфейсе. Основы
+  проектирования взаимодействия~/
+  Алан~Купер, Роберт~Райман, Дэвид~Кронин. --
+\newblock 3 edition. --
+\newblock Москва: Вильямс, 2009.
+
+\bibitem{norman2013design}
+\selectlanguageifdefined{english}
+{Норман,~Дональд}. Дизайн привычных вещей~/
+  Дональд~Норман. --
+\newblock 2 edition. --
+\newblock Москва: Манн, Иванов и Фербер, 2015.
+
+\bibitem{krug2014dontmake}
+\selectlanguageifdefined{english}
+{Круг,~Стив}. Не заставляйте меня думать.
+  Веб-юзабилити и здравый смысл~/ Стив~Круг.
+  --
+\newblock 3 edition. --
+\newblock Москва: Вильямс, 2014.
+
+\bibitem{owasp_top10_2021}
+\selectlanguageifdefined{english}
+{{OWASP}}. OWASP Top Ten 2021. --
+\newblock \url{https://owasp.org/Top10/}. --
+\newblock 2021. --
+\newblock Электронный ресурс. Дата обращения:
+  08.05.2026.
+
+\bibitem{educause_adaptive_2016}
+\selectlanguageifdefined{english}
+{Feldstein,~Michael}. Adaptive Learning Systems: Surviving the Storm. --
+\newblock EDUCAUSE Review. --
+\newblock 2016. --
+\newblock Электронный ресурс. URL:
+  https://er.educause.edu/articles/2016/10/adaptive-learning-systems-surviving-the-storm.
+  Дата обращения: 15.02.2026.
+
+\bibitem{discovery_intelligent_adaptive}
+\selectlanguageifdefined{english}
+{{Discovery Education}}. Intelligent Adaptive Learning. --
+\newblock \url{https://info.discoveryeducation.com/}. --
+\newblock 2025. --
+\newblock Электронный ресурс. Дата обращения:
+  15.02.2026.
+
+\bibitem{sutherland2016scrum}
+\selectlanguageifdefined{english}
+{Сазерленд,~Джефф}. Scrum. Революционный метод
+  управления проектами~/ Джефф~Сазерленд. --
+\newblock Москва: Манн, Иванов и Фербер, 2016.
 
 \end{thebibliography}

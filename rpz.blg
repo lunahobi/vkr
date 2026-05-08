@@ -9,52 +9,64 @@ Reallocating 'name_of_file' (item size: 1) to 16 items.
 A level-1 auxiliary file: 20-analysis.aux
 Reallocating 'name_of_file' (item size: 1) to 14 items.
 A level-1 auxiliary file: 30-design.aux
+Reallocating 'name_of_file' (item size: 1) to 12 items.
+A level-1 auxiliary file: 40-impl.aux
+Reallocating 'name_of_file' (item size: 1) to 18 items.
+A level-1 auxiliary file: 80-conclusion.aux
 Reallocating 'name_of_file' (item size: 1) to 14 items.
 A level-1 auxiliary file: 81-biblio.aux
-Reallocating 'name_of_file' (item size: 1) to 6 items.
-The style file: unsrt.bst
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+The style file: gost780u.bst
 Reallocating 'name_of_file' (item size: 1) to 4 items.
+Reallocating 'name_of_file' (item size: 1) to 17 items.
+A level-1 auxiliary file: 90-appendix1.aux
+Reallocating 'name_of_file' (item size: 1) to 17 items.
+A level-1 auxiliary file: 91-appendix2.aux
+Reallocating 'name_of_file' (item size: 1) to 17 items.
+A level-1 auxiliary file: 92-appendix3.aux
+Reallocating 'name_of_file' (item size: 1) to 17 items.
+A level-1 auxiliary file: 93-appendix4.aux
+Reallocating 'name_of_file' (item size: 1) to 17 items.
+A level-1 auxiliary file: 94-appendix5.aux
 Database file #1: rpz.bib
-Warning--empty publisher in ulikov_testing_2024
-You've used 20 entries,
-            1791 wiz_defined-function locations,
-            524 strings with 6080 characters,
-and the built_in function-call counts, 2489 in all, are:
-= -- 234
-> -- 45
-< -- 0
-+ -- 28
-- -- 8
-* -- 31
-:= -- 328
-add.period$ -- 66
-call.type$ -- 20
-change.case$ -- 20
+You've used 53 entries,
+            2591 wiz_defined-function locations,
+            851 strings with 13931 characters,
+and the built_in function-call counts, 10067 in all, are:
+= -- 1365
+> -- 152
+< -- 16
++ -- 82
+- -- 29
+* -- 304
+:= -- 998
+add.period$ -- 191
+call.type$ -- 53
+change.case$ -- 0
 chr.to.int$ -- 0
-cite$ -- 21
-duplicate$ -- 108
-empty$ -- 358
-format.name$ -- 8
-if$ -- 625
+cite$ -- 53
+duplicate$ -- 558
+empty$ -- 1302
+format.name$ -- 54
+if$ -- 2789
 int.to.chr$ -- 0
-int.to.str$ -- 20
-missing$ -- 3
-newline$ -- 109
-num.names$ -- 7
-pop$ -- 130
+int.to.str$ -- 53
+missing$ -- 0
+newline$ -- 335
+num.names$ -- 33
+pop$ -- 309
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 55
+skip$ -- 140
 stack$ -- 0
 substring$ -- 0
-swap$ -- 20
+swap$ -- 312
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 1
-while$ -- 7
-width$ -- 22
-write$ -- 214
-(There was 1 warning)
+warning$ -- 0
+while$ -- 17
+width$ -- 55
+write$ -- 866
