@@ -1,64 +1,70 @@
 \chapter{{\fontsize{14pt}{21pt}\selectfont\MakeUppercase{Приложение Д. Листинги ключевого кода}}}
 \label{app:listings}
 
-Ниже приведены фрагменты исходного кода программного комплекса (монорепозиторий). Нумерация листингов соответствует приложению~Д.\cite{docker_compose_docs,pydantic_docs,typescript_docs}
+Ниже приведены иллюстративные фрагменты исходных текстов программного комплекса (репозиторий \texttt{coursum}); фрагменты сокращены для читаемости, секретные константы и пароли литералов не дополняются. Нумерация листингов относится к настоящему приложению.\cite{fastapi_docs,flutter_docs,pydantic_docs,docker_compose_docs}
 
-\section*{Д.1 Серверная часть}
+\section*{Д.1 Алгоритм адаптивного теста (дискретное изменение сложности ответом)}
 
-\noindent\textbf{Листинг Д.1 -- Функция подбора следующего вопроса (\texttt{backend/app/services/adaptive.py})}
+\noindent\textbf{Листинг Д.1 -- Фрагмент \texttt{evaluate\_answer} (\texttt{backend/app/services/adaptive.py})}
 
 \begin{lstlisting}[language=Python]
-def select_next_question(db: Session, attempt: Attempt) -> Question | None:
-    questions = db.scalars(
-        select(Question).where(
-            Question.test_id == attempt.test_id,
-            Question.tenant_id == attempt.tenant_id,
-        )
-    ).all()
-    remaining = [q for q in questions if q.id not in (attempt.asked_question_ids or [])]
-    if not remaining:
-        return None
-
-    asked_ids = attempt.asked_question_ids or []
-    topic_frequency: Counter[int] = Counter()
-    if asked_ids:
-        topic_frequency.update(
-            db.scalars(
-                select(QuestionTopic.topic_id).where(QuestionTopic.question_id.in_(asked_ids))
-            )
-        )
-
-    question_topic_map: dict[int, list[int]] = defaultdict(list)
-    remaining_ids = [question.id for question in remaining]
-    if remaining_ids:
-        for question_id, topic_id in db.execute(
-            select(QuestionTopic.question_id, QuestionTopic.topic_id).where(
-                QuestionTopic.question_id.in_(remaining_ids)
-            )
-        ).all():
-            question_topic_map[question_id].append(topic_id)
-
-    def sort_key(question: Question) -> tuple[int, int, int, int]:
-        topic_ids = question_topic_map.get(question.id, [])
-        if topic_ids:
-            min_coverage = min(topic_frequency.get(topic_id, 0) for topic_id in topic_ids)
-            total_coverage = sum(topic_frequency.get(topic_id, 0) for topic_id in topic_ids)
-        else:
-            min_coverage = 0
-            total_coverage = 0
-        return (
-            abs(question.difficulty - attempt.current_difficulty),
-            min_coverage,
-            total_coverage,
-            question.id,
-        )
-
-    return sorted(remaining, key=sort_key)[0]
+def evaluate_answer(
+    db: Session,
+    *,
+    attempt: Attempt,
+    question: Question,
+    answer_option_id: int | None,
+    response_seconds: int,
+) -> dict:
+    options = db.scalars(select(AnswerOption).where(AnswerOption.question_id == question.id)).all()
+    option_ids = {option.id for option in options}
+    if answer_option_id is not None and answer_option_id not in option_ids:
+        raise HTTPException(status_code=422, detail="Answer option does not belong to question")
+    correct_option = next((opt for opt in options if opt.is_correct), None)
+    is_correct = bool(correct_option and correct_option.id == answer_option_id)
+    previous_difficulty = attempt.current_difficulty
+    attempt.asked_question_ids = [*(attempt.asked_question_ids or []), question.id]
+    attempt.current_difficulty = clamp_difficulty(attempt.current_difficulty + (1 if is_correct else -1))
+    attempt.difficulty_path = [*(attempt.difficulty_path or []), attempt.current_difficulty]
+    answer = AttemptAnswer(
+        tenant_id=attempt.tenant_id,
+        attempt_id=attempt.id,
+        question_id=question.id,
+        answer_option_id=answer_option_id,
+        is_correct=is_correct,
+        response_seconds=response_seconds,
+    )
+    db.add(answer)
+    # ... итог возвращается в виде словаря с ключами is_correct, current_difficulty ...
 \end{lstlisting}
 
-\noindent\textbf{Листинг Д.2 -- Выдача токенов доступа (\texttt{backend/app/services/auth.py})}
+\section*{Д.2 Ограничение HTML содержания урока при проигрывании}
+
+\noindent\textbf{Листинг Д.2 -- Разрешённые теги и протоколы (\texttt{backend/app/services/lesson\_player.py})}
 
 \begin{lstlisting}[language=Python]
+ALLOWED_HTML_TAGS = [
+    "p", "br", "div", "span", "strong", "em", "b", "i", "u", "mark",
+    "small", "code", "pre", "blockquote", "hr", "ul", "ol", "li",
+    "h1", "h2", "h3", "h4", "table", "thead", "tbody", "tr", "th",
+    "td", "a", "img", "video", "source",
+]
+ALLOWED_PROTOCOLS = ["http", "https"]
+\end{lstlisting}
+
+\section*{Д.3 Регистрация и выпуск JWT}
+
+\noindent\textbf{Листинг Д.3 -- Обработка учётной записи и токены (\texttt{backend/app/services/auth.py})}
+
+\begin{lstlisting}[language=Python]
+def register_user(db: Session, *, email: str, full_name: str, password: str) -> User:
+    if db.scalar(select(User).where(User.email == email)):
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Email already registered")
+    user = User(email=email, full_name=full_name, password_hash=hash_password(password))
+    db.add(user)
+    db.flush()
+    # ... запись в журнал аудита и возврат user опущены ...
+
 def issue_tokens(db: Session, user: User) -> tuple[str, str]:
     access = create_token(str(user.id), "access", settings.access_token_minutes)
     refresh = create_token(str(user.id), "refresh", settings.refresh_token_minutes)
@@ -73,7 +79,46 @@ def issue_tokens(db: Session, user: User) -> tuple[str, str]:
     return access, refresh
 \end{lstlisting}
 
-\noindent\textbf{Листинг Д.3 -- Роли и сущности пользователя (\texttt{backend/app/models/models.py})}
+\section*{Д.4 Обработчик старта попытки на маршруте тестирования}
+
+\noindent\textbf{Листинг Д.4 -- Старт попытки (\texttt{backend/app/api/routes/tests.py})}
+
+\begin{lstlisting}[language=Python]
+@router.post("/tests/{test_id}/start")
+def start_test(
+    test_id: int,
+    membership: Membership = Depends(active_membership),
+    tenant: Tenant = Depends(tenant_context),
+    db: Session = Depends(get_db),
+) -> dict:
+    test = db.scalar(select(Test).where(Test.id == test_id, Test.tenant_id == tenant.id))
+    if test is None:
+        raise HTTPException(status_code=404, detail="Test not found")
+    question_count = db.scalar(
+        select(func.count(Question.id)).where(
+            Question.test_id == test.id,
+            Question.tenant_id == tenant.id,
+        )
+    ) or 0
+    if question_count == 0:
+        raise HTTPException(status_code=400, detail="Test has no questions")
+    attempt = Attempt(
+        tenant_id=tenant.id,
+        test_id=test.id,
+        user_id=membership.user_id,
+        current_difficulty=test.baseline_difficulty,
+        asked_question_ids=[],
+        difficulty_path=[test.baseline_difficulty],
+    )
+    db.add(attempt)
+    db.commit()
+    db.refresh(attempt)
+    return {"attempt_id": attempt.id}
+\end{lstlisting}
+
+\section*{Д.5 Ключевые сущности ролевой модели данных}
+
+\noindent\textbf{Листинг Д.5 -- Роли пользователя и организация (\texttt{backend/app/models/models.py})}
 
 \begin{lstlisting}[language=Python]
 class RoleName(StrEnum):
@@ -82,74 +127,43 @@ class RoleName(StrEnum):
     org_admin = "org_admin"
     system_admin = "system_admin"
 
-
 class Tenant(Base):
     __tablename__ = "tenants"
 
-    id: Mapped[int] = mapped_column(primary_key=True)
-    name: Mapped[str] = mapped_column(String(120), unique=True, index=True)
-    code: Mapped[str] = mapped_column(String(64), unique=True, index=True)
-    locale: Mapped[str] = mapped_column(String(8), default="ru")
-    is_active: Mapped[bool] = mapped_column(Boolean, default=True)
-
-
 class User(Base):
     __tablename__ = "users"
-
-    id: Mapped[int] = mapped_column(primary_key=True)
-    email: Mapped[str] = mapped_column(String(255), unique=True, index=True)
-    full_name: Mapped[str] = mapped_column(String(255))
-    password_hash: Mapped[str] = mapped_column(String(255))
+    email: Mapped[str]
+    full_name: Mapped[str]
+    password_hash: Mapped[str]
 \end{lstlisting}
 
-\noindent\textbf{Листинг Д.4 -- Фрагмент сводной аналитики (\texttt{backend/app/services/analytics.py})}
+\section*{Д.6 Веб-панель: редактор тестирования преподавателя}
 
-\begin{lstlisting}[language=Python]
-def dashboard_stats(db: Session, tenant_id: int, course_ids: list[int] | None = None) -> dict:
-    selected_course_ids = [int(course_id) for course_id in (course_ids or [])]
-    has_filter = bool(selected_course_ids)
-    enrollment_filters = [Enrollment.tenant_id == tenant_id]
-    test_filters = [Test.tenant_id == tenant_id]
-    attempt_filters = [Attempt.tenant_id == tenant_id, Attempt.status == "in_progress"]
-    course_filters = [Course.tenant_id == tenant_id]
-    if has_filter:
-        enrollment_filters.append(Enrollment.course_id.in_(selected_course_ids))
-        test_filters.append(Test.course_id.in_(selected_course_ids))
-        course_filters.append(Course.id.in_(selected_course_ids))
-    avg_progress = db.scalar(select(func.avg(Enrollment.progress_percent)).where(*enrollment_filters))
-    active_learners = (
-        db.scalar(select(func.count(func.distinct(Enrollment.user_id))).where(*enrollment_filters))
-        if has_filter
-        else db.scalar(select(func.count(Membership.id)).where(Membership.tenant_id == tenant_id))
-    )
-    return {"users": active_learners or 0, "avg_progress": int(avg_progress or 0)}
+\noindent\textbf{Листинг Д.6 -- Компонент \texttt{TestsPage} (\texttt{web/src/app-core.tsx}, фрагмент)}
+
+\begin{lstlisting}[language=Java]
+export function TestsPage({ session }: { session: SessionState }) {
+  const { language, t } = useUi();
+  const courses = useRemote<CourseInfo[]>("/courses", session);
+  const tests = useRemote<TestInfo[]>("/tests", session);
+  const [refreshKey, setRefreshKey] = useState(0);
+  // ...
+  async function submit(event: FormEvent) {
+    event.preventDefault();
+    const created = (await apiPost("/tests", session, {
+      course_id: Number(form.courseId),
+      title: form.title,
+      baseline_difficulty: form.baselineDifficulty,
+      question_limit: form.questionLimit,
+    })) as { id?: number };
+    // ...
+  }
+}
 \end{lstlisting}
 
-\section*{Д.2 Конфигурация развёртывания}
+\section*{Д.7 Мобильное приложение: экран попытки}
 
-\noindent\textbf{Листинг Д.5 -- Файл \texttt{docker-compose.yml} (фрагмент сервисов)}
-
-\begin{lstlisting}
-services:
-  db:
-    image: postgres:16-alpine
-    ports:
-      - "127.0.0.1:5433:5432"
-  backend:
-    build:
-      context: ./backend
-    ports:
-      - "127.0.0.1:8000:8000"
-  web:
-    build:
-      context: ./web
-    ports:
-      - "127.0.0.1:8081:80"
-\end{lstlisting}
-
-\section*{Д.3 Мобильный клиент}
-
-\noindent\textbf{Листинг Д.6 -- Экран прохождения теста (\texttt{mobile/lib/main.dart}, фрагмент)}
+\noindent\textbf{Листинг Д.7 -- \texttt{TestFlowScreen} (\texttt{mobile/lib/main.dart}, фрагмент)}
 
 \begin{lstlisting}[language=Java]
 class TestFlowScreen extends StatefulWidget {
@@ -170,25 +184,33 @@ class TestFlowScreen extends StatefulWidget {
 
 class _TestFlowScreenState extends State<TestFlowScreen> {
   Future<void> start() async {
-    final started =
-        await widget.api.startAttempt(widget.testId, widget.session);
+    final started = await widget.api.startAttempt(widget.testId, widget.session);
     attemptId = started['attempt_id'] as int;
     await loadNextQuestion();
-  }
-
-  Future<void> loadNextQuestion() async {
-    final nextQuestion =
-        await widget.api.getAttemptQuestion(attemptId!, widget.session);
-    if (nextQuestion == null) {
-      await finishAttempt();
-      return;
-    }
-    setState(() {
-      question = nextQuestion;
-      questionShownAt = DateTime.now();
-    });
   }
 }
 \end{lstlisting}
 
-\textit{Примечание: пароли, секретные ключи и продакшен-URL в листингах не приводятся; при локальной отладке используются значения из \texttt{.env.example}.}
+\section*{Д.8 Оркестрация контейнеров демонстрационного контура}
+
+\noindent\textbf{Листинг Д.8 -- Сервисы \texttt{docker-compose.yml}, фрагмент}
+
+\begin{lstlisting}
+services:
+  db:
+    image: postgres:16-alpine
+    ports:
+      - "127.0.0.1:5433:5432"
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "127.0.0.1:8000:8000"
+  web:
+    build:
+      context: ./web
+    ports:
+      - "127.0.0.1:8081:80"
+\end{lstlisting}
+
+\textit{Примечание: в учебном стенде не приводится полное содержимое файлов конфигурации и переменные окружения с секретными значениями.}
