@@ -6,13 +6,13 @@
 \begin{enumerate}
   \item Установить Docker Engine версии актуальной ветви и утилиту Docker Compose (\texttt{docker compose}).
   \item По необходимости установить среду сборки Flutter и Android SDK или Xcode для сборки мобильного приложения слушателя.
-  \item Клонировать монорепозиторий программного комплекса (\texttt{lunahobi/coursum}).
+  \item Клонировать исходный код по адресу \url{https://github.com/lunahobi/coursum}.
 \end{enumerate}
 
 \section*{Г.2 Файлы конфигурации}
 
 \begin{enumerate}
-  \item Скопировать \texttt{.env.example} корня монорепозитория или репозитория серверной части во внутреннее имя \texttt{.env} согласно путям сборки Dockerfile.
+  \item Скопировать \texttt{.env.example} из корня проекта (или каталога серверной части) во внутреннее имя \texttt{.env} согласно путям сборки Dockerfile.
   \item Зафиксировать минимально: \texttt{POSTGRES\_PASSWORD}, \texttt{LMS\_SECRET\_KEY} достаточной длины, \texttt{LMS\_ENVIRONMENT}, \texttt{LMS\_CORS\_ORIGINS} в форме JSON-массива или перечне разрешённых источников.
   \item Для режима локальной диагностики допускать \texttt{LMS\_ALLOW\_TENANT\_HEADER\_FALLBACK=true} для передачи кода организации заголовком \texttt{X-Tenant-Code} согласно реализации серверной части.
 \end{enumerate}
@@ -20,7 +20,7 @@
 \section*{Г.3 Запуск через Docker Compose}
 
 \begin{enumerate}
-  \item В корне репозитория выполнить \texttt{docker compose up {-}{-}build -d}.
+  \item В корне каталога с исходным кодом выполнить \texttt{docker compose up {-}{-}build -d}.
   \item Дождаться готовности службы базы данных: контейнер \texttt{db} использует \texttt{postgres:16-alpine} и публикуется на \texttt{127.0.0.1:5433}.
   \item После выхода сценария entrypoint успешности миграций (\texttt{Alembic}) сервер слушает \texttt{127.0.0.1:8000}, сборка статики веб-панели экспонируется на \texttt{127.0.0.1:8081}.
 \end{enumerate}
@@ -64,6 +64,6 @@
 
 \section*{Г.9 Пример опытного развёртывания на VPS (домен \texttt{coursum.online})}
 
-В рамках демонстрации работоспособности программного комплекса в сети Интернет использовался арендованный виртуальный выделенный сервер (VPS). Зарегистрировано доменное имя \texttt{coursum.online}; для пользовательского веб-приложения и мобильного клиента базовый URL API в конфигурации сборки задаётся на узел \texttt{https://api.coursum.online/api/v1}. Выдача загруженных медиафайлов пользователям и слушателям осуществляется через тот же хост \texttt{api.coursum.online}, так как медиамаршруты реализованы в серверной части монорепозитория.
+В рамках демонстрации работоспособности программного комплекса в сети Интернет использовался арендованный виртуальный выделенный сервер (VPS). Зарегистрировано доменное имя \texttt{coursum.online}; для пользовательского веб-приложения и мобильного клиента базовый URL API в конфигурации сборки задаётся на узел \texttt{https://api.coursum.online/api/v1}. Выдача загруженных медиафайлов пользователям и слушателям осуществляется через тот же хост \texttt{api.coursum.online}, так как отдача каталога \texttt{/media} настроена в серверной части наряду с REST API.
 
-Согласование источников для CORS и базового URL веб-панели задаётся переменными окружения (ориентиры в репозитории: \texttt{LMS\_CORS\_ORIGINS} включает \texttt{https://coursum.online} и \texttt{https://www.coursum.online}; параметр сборки веб-клиента \texttt{VITE\_API\_BASE} указывает на \texttt{https://api.coursum.online/api/v1}). Развёртывание на VPS выполнялось в контейнерном виде командой \texttt{docker compose up -d {-}{-}build} после настройки DNS-записей на IP-адрес сервера и выпуска TLS-сертификата (например, средствами обратного прокси с поддержкой ACME).
+Согласование источников для CORS и базового URL веб-панели задаётся переменными окружения (в проекте задано: \texttt{LMS\_CORS\_ORIGINS} включает \texttt{https://coursum.online} и \texttt{https://www.coursum.online}; параметр сборки веб-клиента \texttt{VITE\_API\_BASE} указывает на \texttt{https://api.coursum.online/api/v1}). Развёртывание на VPS выполнялось в контейнерном виде командой \texttt{docker compose up -d {-}{-}build} после настройки DNS-записей на IP-адрес сервера и выпуска TLS-сертификата (например, средствами обратного прокси с поддержкой ACME).
