@@ -1,7 +1,7 @@
 \babel@toc {russian}{}\relax 
 \contentsline {section}{\numberline {1}Предметная область и актуальность}{3}{section.0.1}%
-\contentsline {section}{\numberline {2}Целевая аудитория}{3}{section.0.2}%
+\contentsline {section}{\numberline {2}Целевая аудитория}{4}{section.0.2}%
 \contentsline {section}{\numberline {3}Аналоги и конкуренты}{4}{section.0.3}%
 \contentsline {section}{\numberline {4}Цель и задачи}{5}{section.0.4}%
 \contentsline {section}{\numberline {5}План по параграфам}{6}{section.0.5}%
-\contentsline {chapter}{{\fontsize {14pt}{21pt}\selectfont \MakeUppercase []{СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}}}{7}{section*.2}%
+\contentsline {chapter}{{\fontsize {14pt}{21pt}\selectfont \MakeUppercase []{СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}}}{8}{section*.2}%

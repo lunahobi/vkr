@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.1) (preloaded format=xelatex 2026.2.15)  9 MAY 2026 12:58
+This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.1) (preloaded format=xelatex 2026.2.15)  9 MAY 2026 19:59
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1240,9 +1240,18 @@ File: ./extra/Title.pdf Graphic file (type pdf)
  [5
 
 ]
+File: ./extra/Title.pdf Graphic file (type pdf)
+<use ./extra/Title.pdf, page 6>
+File: ./extra/Title.pdf Graphic file (type pdf)
+<use ./extra/Title.pdf, page 6>
+File: ./extra/Title.pdf Graphic file (type pdf)
+<use ./extra/Title.pdf, page 6>
+ [6
+
+]
 \openout2 = `00-abstract.aux'.
 
- (00-abstract.tex) [6
+ (00-abstract.tex) [7
 
 
 ] (rpz.toc
@@ -1258,17 +1267,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--4
  [][] [][][]\TU/TimesNewRoman(0)/m/n/14.4 Предметная область корпоративного обучения и исходное 
  []
 
-[7
+[8
 
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 55--55
+Underfull \hbox (badness 10000) in paragraph at lines 53--53
  \TU/TimesNewRoman(0)/m/n/14 ПРИЛОЖЕНИЯ И РУКОВОДСТВО АДМИНИСТРАТОРА 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 56--56
+Underfull \hbox (badness 10000) in paragraph at lines 54--54
  [][] [][]\TU/TimesNewRoman(0)/m/n/14 ПРИЛОЖЕНИЕ Г. РУКОВОДСТВО ПО РАЗВЁРТЫВАНИЮ 
  []
 
@@ -1276,33 +1285,33 @@ Underfull \hbox (badness 10000) in paragraph at lines 56--56
 \tf@toc=\write5
 \openout5 = `rpz.toc'.
 
- [8]
+ [9]
 \openout2 = `12-intro.aux'.
 
- (12-intro.tex [9
+ (12-intro.tex [10
 
 
 ]
-Underfull \hbox (badness 1303) in paragraph at lines 14--15
-[]\TU/TimesNewRoman(0)/m/n/14.4 выявить основные проблемы организации учебного процесса и
+Underfull \hbox (badness 1817) in paragraph at lines 16--17
+[]\TU/TimesNewRoman(0)/m/n/14.4 выполнить сравнительный анализ существующих LMS-решений и
+ []
+
+[11]
+Underfull \hbox (badness 3954) in paragraph at lines 33--34
+[]\TU/TimesNewRoman(0)/m/n/14.4 Информационная база исследования: нормативные документы по
  []
 
 
-Underfull \hbox (badness 1210) in paragraph at lines 17--18
-[]\TU/TimesNewRoman(0)/m/n/14.4 обосновать выбор технологий и платформ для разработки про-
- []
-
-[10]
-Underfull \hbox (badness 1629) in paragraph at lines 33--34
-\TU/TimesNewRoman(0)/m/n/14.4 оформлению отчётной и программной документации;[[], [], [], [], [],
+Underfull \hbox (badness 2221) in paragraph at lines 33--34
+\TU/TimesNewRoman(0)/m/n/14.4 оформлению отчётной и программной документации[[], [], [], [], [],
  []
 
 
-Underfull \hbox (badness 1354) in paragraph at lines 33--34
-[]\TU/TimesNewRoman(0)/m/n/14.4 , [], [], []] методические рекомендации вуза по ВКР;[[]] учебная и
+Underfull \hbox (badness 1048) in paragraph at lines 33--34
+[]\TU/TimesNewRoman(0)/m/n/14.4 , [], [], []]; методические рекомендации вуза по ВКР[[]]; учебная и
  []
 
-[11]) [12]
+[12]) [13]
 \openout2 = `20-analysis.aux'.
 
  (20-analysis.tex
@@ -1310,7 +1319,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--9
 []\TU/TimesNewRoman(0)/m/n/14.4 Для рассматриваемой предметной области характерно наличие
  []
 
-[13
+[14
 
 
 
@@ -1318,104 +1327,89 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--9
 ]
 File: images/BPMN.png Graphic file (type bmp)
 <images/BPMN.png>
- [14] [15]
+ [15] [16]
 File: images/use case.png Graphic file (type bmp)
 <images/use case.png>
- [16] [17]
-Underfull \hbox (badness 1178) in paragraph at lines 89--90
-\TU/TimesNewRoman(0)/m/n/14.4 вания требований.[[], []] В рамках анализа требований важно не только
+ [17] [18] [19] [20] [21]
+Overfull \hbox (10.17665pt too wide) in paragraph at lines 162--162
+[]|\TU/TimesNewRoman(0)/m/n/12 Непротиворечивость|  
  []
 
 
-Underfull \hbox (badness 1231) in paragraph at lines 89--90
-\TU/TimesNewRoman(0)/m/n/14.4 перечислить ожидаемую функциональность, но и проверить требования
+Overfull \hbox (7.26454pt too wide) in paragraph at lines 162--162
+[]|\TU/TimesNewRoman(0)/m/n/12 Недвусмысленность|  
  []
 
-[18]
-Underfull \hbox (badness 2961) in paragraph at lines 113--114
-[]\TU/TimesNewRoman(0)/m/n/14.4 Система должна обеспечивать регистрацию и аутентификацию
- []
-
-[19] [20] [21]
-Underfull \hbox (badness 1354) in paragraph at lines 180--181
-[]\TU/TimesNewRoman(0)/m/n/14.4 Платформа должна поддерживать как минимум две клиентские
- []
-
-
-Underfull \hbox (badness 1052) in paragraph at lines 196--197
-[]\TU/TimesNewRoman(0)/m/n/14.4 Сущности, зависимые от организации-арендатора, должны быть
- []
-
-[22] [23] [24]
-Overfull \hbox (0.78151pt too wide) in paragraph at lines 286--286
-[]|\TU/TimesNewRoman(0)/m/n/12 Администратор 
- []
-
-
-Underfull \hbox (badness 1400) in paragraph at lines 316--316
- []\TU/TimesNewRoman(0)/m/n/14.4 Рисунок 3 – |Иерархия ключевых требований системы| 
- []
-
-[25]
-Underfull \hbox (badness 1112) in paragraph at lines 322--323
+[22]
+Underfull \hbox (badness 1112) in paragraph at lines 197--198
 []\TU/TimesNewRoman(0)/m/n/14.4 Для сравнения выбраны решения, представляющие разные классы
  []
 
-[26]
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 376.
+[23] [24]
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 251.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <5.5> not available
-(Font)              size <5> substituted on input line 376.
+(Font)              size <5> substituted on input line 251.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 376.
+(Font)              size <5> substituted on input line 251.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 376.
+(Font)              size <5> substituted on input line 251.
 
-[27] [28] [29] [30]
-Underfull \hbox (badness 10000) in paragraph at lines 514--515
-[]\TU/TimesNewRoman(0)/m/n/14.4 В административной части проекта рассматривались \TU/CMUTypewriterText(0)/m/n/14.4 React +
+[25] [26]
+Underfull \hbox (badness 1552) in paragraph at lines 340--341
+[]\TU/TimesNewRoman(0)/m/n/14.4 соответствие клиент–серверной архитектуре с отдельными web- и
  []
 
 
-Underfull \hbox (badness 2197) in paragraph at lines 514--515
+Underfull \hbox (badness 1102) in paragraph at lines 344--345
+[]\TU/TimesNewRoman(0)/m/n/14.4 воспроизводимость локального развёртывания без сложной инфра-
+ []
+
+[27] [28]
+Underfull \hbox (badness 10000) in paragraph at lines 389--390
+[]\TU/TimesNewRoman(0)/m/n/14.4 В административной части проекта рассматривались React +
+ []
+
+
+Underfull \hbox (badness 1048) in paragraph at lines 389--390
+\TU/TimesNewRoman(0)/m/n/14.4 аналитикой. Такой интерфейс состоит из большого числа форм, таблиц
+ []
+
+
+Underfull \hbox (badness 2197) in paragraph at lines 389--390
 \TU/TimesNewRoman(0)/m/n/14.4 и маршрутов, которые должны переиспользовать общие компоненты и
  []
 
-[31] [32] [33]) [34]
+
+Underfull \hbox (badness 1264) in paragraph at lines 389--390
+\TU/TimesNewRoman(0)/m/n/14.4 в пользу React как гибкой компонентной библиотеки, а TypeScript был
+ []
+
+[29] [30]) [31] [32]
 \openout2 = `30-design.aux'.
 
  (30-design.tex
 File: images/c4.png Graphic file (type bmp)
 <images/c4.png>
- [35
+ [33
 
 
 
 
-]
-Underfull \hbox (badness 6641) in paragraph at lines 22--23
-[]\TU/CMUTypewriterText(0)/m/n/14.4 tenants \TU/TimesNewRoman(0)/m/n/14.4 — работа с организациями и текущим контекстом
- []
-
-[36]
+] [34]
 File: images/UML component diagram.png Graphic file (type bmp)
 <images/UML component diagram.png>
 
 Underfull \hbox (badness 3417) in paragraph at lines 37--37
- []\TU/TimesNewRoman(0)/m/n/14.4 Рисунок 5 – |Диаграмма компонентов системы| 
+ []\TU/TimesNewRoman(0)/m/n/14.4 Рисунок 4 – |Диаграмма компонентов системы| 
  []
 
-[37]
-Underfull \hbox (badness 5802) in paragraph at lines 78--79
-[]\TU/TimesNewRoman(0)/m/n/14.4 преподаватель добавляет уроки и при необходимости медиа-
- []
-
-[38] [39]
+[35] [36]
 Underfull \hbox (badness 5696) in paragraph at lines 123--124
 []\TU/TimesNewRoman(0)/m/n/14.4 Модель данных построена вокруг сущностей, необходимых для
  []
@@ -1425,56 +1419,56 @@ Underfull \hbox (badness 2134) in paragraph at lines 123--124
 \TU/TimesNewRoman(0)/m/n/14.4 поддержки мультиарендного обучения (несколько организаций в одном
  []
 
+[37]
 File: images/db.png Graphic file (type bmp)
 <images/db.png>
 
 Underfull \hbox (badness 2197) in paragraph at lines 134--134
- []\TU/TimesNewRoman(0)/m/n/14.4 Рисунок 6 – |Инфологическая модель базы данных| 
+ []\TU/TimesNewRoman(0)/m/n/14.4 Рисунок 5 – |Инфологическая модель базы данных| 
  []
 
-[40] [41]
+[38] [39]
 File: images/Даталогическая_организация.png Graphic file (type bmp)
 <images/Даталогическая_организация.png>
 File: images/Даталогическая_курсы.png Graphic file (type bmp)
 <images/Даталогическая_курсы.png>
 
 Underfull \hbox (badness 1845) in paragraph at lines 158--158
- []\TU/TimesNewRoman(0)/m/n/14.4 Рисунок 8 – |Даталогическая модель контура курсов| 
+ []\TU/TimesNewRoman(0)/m/n/14.4 Рисунок 7 – |Даталогическая модель контура курсов| 
  []
 
-[42] [43]
+[40] [41]
 File: images/Главная.png Graphic file (type bmp)
 <images/Главная.png>
 
 Underfull \hbox (badness 2735) in paragraph at lines 202--202
- []\TU/TimesNewRoman(0)/m/n/14.4 Рисунок 9 – |Главный экран мобильного клиента| 
+ []\TU/TimesNewRoman(0)/m/n/14.4 Рисунок 8 – |Главный экран мобильного клиента| 
  []
 
-[44]
+[42]
 File: images/Мои курсы - 1.png Graphic file (type bmp)
 <images/Мои курсы - 1.png>
 
-Underfull \hbox (badness 2809) in paragraph at lines 211--211
- []\TU/TimesNewRoman(0)/m/n/14.4 Рисунок 10 – |Экран списка назначенных курсов| 
+Underfull \hbox (badness 3168) in paragraph at lines 211--211
+ []\TU/TimesNewRoman(0)/m/n/14.4 Рисунок 9 – |Экран списка назначенных курсов| 
  []
 
-[45]
+[43]
 Underfull \hbox (badness 1067) in paragraph at lines 217--218
 \TU/TimesNewRoman(0)/m/n/14.4 циями и адаптировать взаимодействие с системой под реальные задачи
  []
 
-[46] [47] [48] [49] [50]
-Underfull \hbox (badness 1019) in paragraph at lines 362--362
-[][]\TU/CMUTypewriterText(0)/m/n/12 /auth\TU/TimesNewRoman(0)/m/n/12 , \TU/CMUTypewriterText(0)/m/n/12 /tenants\TU/TimesNewRoman(0)/m/n/12 , \TU/CMUTypewriterText(0)/m/n/12 /users\TU/TimesNewRoman(0)/m/n/12 , \TU/CMUTypewriterText(0)/m/n/12 /courses\TU/TimesNewRoman(0)/m/n/12 , \TU/CMUTypewriterText(0)/m/n/12 /media\TU/TimesNewRoman(0)/m/n/12 , \TU/CMUTypewriterText(0)/m/n/12 /tests\TU/TimesNewRoman(0)/m/n/12 , 
+[44] [45] [46] [47] [48] [49]
+Underfull \hbox (badness 1014) in paragraph at lines 379--380
+[]\TU/TimesNewRoman(0)/m/n/14.4 Структурные фрагменты модулей adaptive, интерфейса тестов веб-
  []
 
-[51]
 File: images/sequence.png Graphic file (type bmp)
 <images/sequence.png>
- [52]
+[50]
 File: images/adaptive flow.png Graphic file (type bmp)
 <images/adaptive flow.png>
- [53] [54]) [55]
+ [51] [52]) [53]
 \openout2 = `40-impl.aux'.
 
  (40-impl.tex
@@ -1488,61 +1482,46 @@ Underfull \hbox (badness 1888) in paragraph at lines 6--7
  []
 
 
+Underfull \hbox (badness 1960) in paragraph at lines 11--12
+[]\TU/TimesNewRoman(0)/m/n/14.4 Клонировать исходный код из репозитория [][]$[] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] []
+ []
+
+
+Underfull \hbox (badness 2012) in paragraph at lines 11--12
+[] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] []$[][] \TU/TimesNewRoman(0)/m/n/14.4 и настроить параметры по образцу .env.example
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 11--12
-[]\TU/TimesNewRoman(0)/m/n/14.4 Клонировать исходный код из репозитория [][]$[] [] [] [] [] [] [] [] [] [] [] []
+\TU/TimesNewRoman(0)/m/n/14.4 (LMS_SECRET_KEY, LMS_DATABASE_URL при необходимости,
  []
 
 
-Underfull \hbox (badness 5446) in paragraph at lines 11--12
-[] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] []$[][] \TU/TimesNewRoman(0)/m/n/14.4 и настроить параметры по образцу
- []
-
-
-Underfull \hbox (badness 6445) in paragraph at lines 11--12
-\TU/CMUTypewriterText(0)/m/n/14.4 .env.example \TU/TimesNewRoman(0)/m/n/14.4 (\TU/CMUTypewriterText(0)/m/n/14.4 LMS_SECRET_KEY\TU/TimesNewRoman(0)/m/n/14.4 , \TU/CMUTypewriterText(0)/m/n/14.4 LMS_DATABASE_URL \TU/TimesNewRoman(0)/m/n/14.4 при необходимо-
+Underfull \hbox (badness 10000) in paragraph at lines 11--12
+\TU/TimesNewRoman(0)/m/n/14.4 LMS_ENVIRONMENT, LMS_CORS_ORIGINS, параметры доступа к
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 12--13
-[]\TU/TimesNewRoman(0)/m/n/14.4 Запустить контейнеры командой \TU/CMUTypewriterText(0)/m/n/14.4 docker compose up -d
+[]\TU/TimesNewRoman(0)/m/n/14.4 Запустить контейнеры командой docker compose up -d --build:
  []
 
 
-Underfull \hbox (badness 5985) in paragraph at lines 14--15
-\TU/CMUTypewriterText(0)/m/n/14.4 --profile tools seed \TU/TimesNewRoman(0)/m/n/14.4 (эквивалент локально без Docker: в каталоге
+Underfull \hbox (badness 10000) in paragraph at lines 12--13
+\TU/TimesNewRoman(0)/m/n/14.4 сервис db использует образ postgres:16-alpine и публикацию порта
  []
 
-[56
+
+Underfull \hbox (badness 6428) in paragraph at lines 12--13
+\TU/TimesNewRoman(0)/m/n/14.4 127.0.0.1:5433$\OMS/cmsy/m/n/14.4 !$\TU/TimesNewRoman(0)/m/n/14.4 5432, серверная часть слушает 127.0.0.1:8000, контей-
+ []
+
+[54
 
 
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 18--19
-[]\TU/TimesNewRoman(0)/m/n/14.4 Мобильный клиент выполняется вне контейнерного про-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 18--19
-\TU/TimesNewRoman(0)/m/n/14.4 филя: из каталога \TU/CMUTypewriterText(0)/m/n/14.4 mobile \TU/TimesNewRoman(0)/m/n/14.4 выполняется \TU/CMUTypewriterText(0)/m/n/14.4 flutter pub get\TU/TimesNewRoman(0)/m/n/14.4 , за-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 18--19
-\TU/TimesNewRoman(0)/m/n/14.4 тем \TU/CMUTypewriterText(0)/m/n/14.4 flutter run \TU/TimesNewRoman(0)/m/n/14.4 с при необходимости переопределением
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 18--19
-\TU/TimesNewRoman(0)/m/n/14.4 базового URL API. Для эмулятора Android обычно задают
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 18--19
-\TU/CMUTypewriterText(0)/m/n/14.4 --dart-define=API_BASE=http://10.0.2.2:8000/api/v1\TU/TimesNewRoman(0)/m/n/14.4 ; на физи-
- []
-
-
 Underfull \hbox (badness 3449) in paragraph at lines 46--46
 []|\TU/TimesNewRoman(0)/m/n/12 инспекция 
  []
@@ -1552,54 +1531,24 @@ Underfull \hbox (badness 1320) in paragraph at lines 46--46
 []|\TU/TimesNewRoman(0)/m/n/12 соответствует настройке 
  []
 
-
-Overfull \hbox (5.27954pt too wide) in paragraph at lines 46--46
-\TU/CMUTypewriterText(0)/m/n/12 api.coursum.online|  
- []
-
-[57] [58]
-Overfull \hbox (18.1313pt too wide) in paragraph at lines 92--92
-\TU/TimesNewRoman(0)/m/n/11 (\TU/CMUTypewriterText(0)/m/n/11 /attempts/{id}/next-question\TU/TimesNewRoman(0)/m/n/11 ), 
- []
-
-
-Underfull \hbox (badness 2073) in paragraph at lines 92--92
-\TU/TimesNewRoman(0)/m/n/11 отправка ответа 
- []
-
-
-Overfull \hbox (18.43745pt too wide) in paragraph at lines 92--92
-\TU/TimesNewRoman(0)/m/n/11 (\TU/CMUTypewriterText(0)/m/n/11 /attempts/{id}/submit-answer\TU/TimesNewRoman(0)/m/n/11 ); 
- []
-
-
+[55] [56]
 Overfull \hbox (80.76959pt too wide) in alignment at lines 92--92
 [][][][][] 
  []
 
-[59] [60]
+[57] [58]
 Overfull \hbox (112.82309pt too wide) in paragraph at lines 124--125
  [][] 
  []
 
-
-Underfull \hbox (badness 1997) in paragraph at lines 131--132
-\TU/TimesNewRoman(0)/m/n/14.4 ной аутентификации (\TU/CMUTypewriterText(0)/m/n/14.4 issue_tokens\TU/TimesNewRoman(0)/m/n/14.4 , \TU/CMUTypewriterText(0)/m/n/14.4 rotate_refresh_token\TU/TimesNewRoman(0)/m/n/14.4 ). Обраще-
- []
-
-
-Underfull \hbox (badness 2005) in paragraph at lines 131--132
-\TU/TimesNewRoman(0)/m/n/14.4 ния к ресурсам, зависящим от организации, защищены зависимостями
- []
-
-[61]
+[59]
 Underfull \hbox (badness 10000) in paragraph at lines 135--136
-[]\TU/TimesNewRoman(0)/m/n/14.4 Ограничение частотных попыток аутентификации задаёт-
+[]\TU/TimesNewRoman(0)/m/n/14.4 Ограничение частотных попыток аутентификации зада-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 135--136
-\TU/TimesNewRoman(0)/m/n/14.4 ся \TU/CMUTypewriterText(0)/m/n/14.4 auth_rate_limiter\TU/TimesNewRoman(0)/m/n/14.4 ; политика CORS настраивается списком
+\TU/TimesNewRoman(0)/m/n/14.4 ётся auth_rate_limiter; политика CORS настраивается списком
  []
 
 
@@ -1607,19 +1556,14 @@ Underfull \hbox (badness 6510) in paragraph at lines 137--138
 []\TU/TimesNewRoman(0)/m/n/14.4 В подсистеме аудита фиксируются ключевые операции записей
  []
 
-
-Underfull \hbox (badness 4120) in paragraph at lines 137--138
-\TU/TimesNewRoman(0)/m/n/14.4 (\TU/CMUTypewriterText(0)/m/n/14.4 write_audit_log\TU/TimesNewRoman(0)/m/n/14.4 ). Контекст организации в промышленной среде по
- []
-
-[62]
-Underfull \hbox (badness 10000) in paragraph at lines 147--148
-[]\TU/TimesNewRoman(0)/m/n/14.4 Повышение наблюдаемости достигается наличием \TU/CMUTypewriterText(0)/m/n/14.4 /health \TU/TimesNewRoman(0)/m/n/14.4 и
- []
-
-
+[60]
 Underfull \hbox (badness 2150) in paragraph at lines 151--152
 []\TU/TimesNewRoman(0)/m/n/14.4 Контейнеризация обеспечивает повторяемость окружений; ошибки
+ []
+
+
+Underfull \hbox (badness 3482) in paragraph at lines 153--154
+[]\TU/TimesNewRoman(0)/m/n/14.4 Текущие ограничения. Однопроцессный экземпляр серверной ча-
  []
 
 
@@ -1627,17 +1571,17 @@ Underfull \hbox (badness 2165) in paragraph at lines 153--154
 \TU/TimesNewRoman(0)/m/n/14.4 сти без горизонтального масштабирования, одно инстансирующее узло
  []
 
-
-Underfull \hbox (badness 2393) in paragraph at lines 155--156
-[]\TU/TimesNewRoman(0)/b/n/14.4 Характеристики производительности. \TU/TimesNewRoman(0)/m/n/14.4 Без производственной на-
+[61]
+Underfull \hbox (badness 10000) in paragraph at lines 167--168
+[]\TU/TimesNewRoman(0)/m/n/14.4 развитие версий оформляется файлом журнала изменений
  []
 
-[63]
-Underfull \hbox (badness 4341) in paragraph at lines 167--168
-[]\TU/TimesNewRoman(0)/m/n/14.4 Сопровождение версий оформляется файлом журнала изменений
+
+Underfull \hbox (badness 2556) in paragraph at lines 167--168
+\TU/TimesNewRoman(0)/m/n/14.4 CHANGELOG.md, выпусками тегируемых релизов с политикой мигра-
  []
 
-) [64] [65]
+) [62] [63]
 \openout2 = `80-conclusion.aux'.
 
  (80-conclusion.tex
@@ -1651,21 +1595,21 @@ Underfull \hbox (badness 2073) in paragraph at lines 5--6
  []
 
 
-Underfull \hbox (badness 2213) in paragraph at lines 5--6
-\TU/TimesNewRoman(0)/m/n/14.4 рены требования; обоснован выбор технологий (\TU/CMUTypewriterText(0)/m/n/14.4 FastAPI\TU/TimesNewRoman(0)/m/n/14.4 , \TU/CMUTypewriterText(0)/m/n/14.4 SQLAlchemy\TU/TimesNewRoman(0)/m/n/14.4 ,
+Underfull \hbox (badness 2744) in paragraph at lines 5--6
+\TU/TimesNewRoman(0)/m/n/14.4 рены требования; обоснован выбор технологий (FastAPI, SQLAlchemy,
  []
 
 
-Underfull \hbox (badness 1009) in paragraph at lines 7--8
-\TU/TimesNewRoman(0)/m/n/14.4 го контура: выполнено развёртывание на арендованном VPS с доменом
+Underfull \hbox (badness 1337) in paragraph at lines 7--8
+[]\TU/TimesNewRoman(0)/m/n/14.4 Практическая ценность работы состоит в том, что разработанный
  []
 
-[66
+[64
 
 
 
 
-]) [67]
+]) [65]
 \openout2 = `81-biblio.aux'.
 
  (81-biblio.tex (rpz.bbl
@@ -1708,7 +1652,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 90--97
 \TU/TimesNewRoman(0)/m/n/14.4 библиотечному и издательскому делу. Библиографическая запись.
  []
 
-[68
+[66
 
 
 
@@ -1738,7 +1682,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 168--172
 []\TU/TimesNewRoman(0)/m/n/14.4 Соммервилл, Ян. Инженерия программного обеспечения /
  []
 
-[69]
+[67]
 Underfull \hbox (badness 6927) in paragraph at lines 175--179
 []\TU/TimesNewRoman(0)/m/n/14.4 Маклаков, Сергей Владимирович. Создание информационных
  []
@@ -1748,7 +1692,7 @@ Underfull \hbox (badness 1092) in paragraph at lines 175--179
 \TU/TimesNewRoman(0)/m/n/14.4 систем с AllFusion Modeling Suite / Сергей Владимирович Маклаков. –
  []
 
-[70]
+[68]
 Underfull \hbox (badness 10000) in paragraph at lines 290--296
 []\TU/TimesNewRoman(0)/m/n/14.4 Feldstein, Michael. Adaptive Learning Systems: Surviving the
  []
@@ -1763,7 +1707,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 347--351
 []\TU/TimesNewRoman(0)/m/n/14.4 Мартин, Роберт. Чистая архитектура. Искусство разработки
  []
 
-[71]
+[69]
 Underfull \hbox (badness 10000) in paragraph at lines 396--401
 []\TU/TimesNewRoman(0)/m/n/14.4 Купер, Алан. Об интерфейсе. Основы проектирования
  []
@@ -1773,33 +1717,33 @@ Underfull \hbox (badness 3713) in paragraph at lines 427--430
 []\TU/TimesNewRoman(0)/m/n/14.4 Сазерленд, Джефф. Scrum. Революционный метод управления
  []
 
-[72])) [73]
+[70])) [71]
 \openout2 = `90-appendix1.aux'.
 
- (90-appendix1.tex [74
+ (90-appendix1.tex [72
 
 
 
 
-] [75]
+]
+Underfull \hbox (badness 1173) in paragraph at lines 28--29
+[]\TU/TimesNewRoman(0)/m/n/14.4 система должна поддерживать назначение курсов пользователям и
+ []
+
+
 Underfull \hbox (badness 1331) in paragraph at lines 44--45
 []\TU/TimesNewRoman(0)/m/n/14.4 Клиентские приложения функционируют под управлением ОС се-
  []
 
-[76]
+[73] [74]
 Underfull \hbox (badness 3364) in paragraph at lines 68--69
 []\TU/TimesNewRoman(0)/m/n/14.4 Комплект включает руководство пользователя мобильного прило-
  []
 
-) [77] [78]
+) [75] [76]
 \openout2 = `91-appendix2.aux'.
 
- (91-appendix2.tex
-Underfull \hbox (badness 6725) in paragraph at lines 21--22
-[]\TU/TimesNewRoman(0)/m/n/14.4 средства автоматизированного тестирования: Pytest (серверная
- []
-
-[79
+ (91-appendix2.tex [77
 
 
 
@@ -1809,17 +1753,7 @@ Underfull \hbox (badness 1163) in paragraph at lines 26--27
 []\TU/TimesNewRoman(0)/m/n/14.4 Применяются функциональное тестирование по тест-кейсам, инте-
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 84--84
-[]|\TU/TimesNewRoman(0)/m/n/11 GET 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 84--84
-[]|\TU/TimesNewRoman(0)/m/n/11 POST 
- []
-
-[80]) [81]
+[78]) [79]
 \openout2 = `92-appendix3.aux'.
 
  (92-appendix3.tex
@@ -1833,51 +1767,46 @@ Underfull \hbox (badness 10000) in paragraph at lines 23--24
  []
 
 
-Overfull \hbox (7.85738pt too wide) in paragraph at lines 17--31
- [][] 
+Underfull \hbox (badness 10000) in paragraph at lines 40--41
+[]\TU/TimesNewRoman(0)/m/n/14.4 Запуск: выполнить flutter run --dart-
  []
 
 
-Overfull \hbox (170.25185pt too wide) in paragraph at lines 40--41
-[]\TU/TimesNewRoman(0)/m/n/14.4 Запуск: выполнить \TU/CMUTypewriterText(0)/m/n/14.4 flutter run --dart-define=API_BASE=http://10.0.2.2:8000/api/v1
+Underfull \hbox (badness 10000) in paragraph at lines 40--41
+\TU/TimesNewRoman(0)/m/n/14.4 define=API_BASE=http://10.0.2.2:8000/api/v1 на эмуляторе Android; на
  []
 
-
-Underfull \hbox (badness 2884) in paragraph at lines 40--41
-\TU/TimesNewRoman(0)/m/n/14.4 на эмуляторе Android; на устройстве подставить IP узла сети вместо
- []
-
-[82
+[80
 
 
 
 
 ]
-Underfull \hbox (badness 5954) in paragraph at lines 46--47
-[]\TU/TimesNewRoman(0)/m/n/14.4 Открыть экран входа, ввести \TU/CMUTypewriterText(0)/m/n/14.4 learner1@acme.example.com \TU/TimesNewRoman(0)/m/n/14.4 и
+Underfull \hbox (badness 10000) in paragraph at lines 46--47
+[]\TU/TimesNewRoman(0)/m/n/14.4 Открыть экран входа, ввести learner1@acme.example.com и
  []
 
-[83]) [84] [85]
+
+Underfull \hbox (badness 1552) in paragraph at lines 54--55
+[]\TU/TimesNewRoman(0)/m/n/14.4 Для контроля знаний открыть сценарий адаптивного теста (экран
+ []
+
+[81]) [82] [83]
 \openout2 = `93-appendix4.aux'.
 
  (93-appendix4.tex
-Underfull \hbox (badness 2205) in paragraph at lines 7--8
-[]\TU/TimesNewRoman(0)/m/n/14.4 Установить Docker Engine версии актуальной ветви и утилиту
+Underfull \hbox (badness 10000) in paragraph at lines 16--17
+[]\TU/TimesNewRoman(0)/m/n/14.4 Зафиксировать минимально: POSTGRES_PASSWORD,
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 16--17
-[]\TU/TimesNewRoman(0)/m/n/14.4 Зафиксировать минимально: \TU/CMUTypewriterText(0)/m/n/14.4 POSTGRES_PASSWORD\TU/TimesNewRoman(0)/m/n/14.4 ,
+\TU/TimesNewRoman(0)/m/n/14.4 LMS_SECRET_KEY достаточной длины, LMS_ENVIRONMENT,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 16--17
-\TU/CMUTypewriterText(0)/m/n/14.4 LMS_SECRET_KEY \TU/TimesNewRoman(0)/m/n/14.4 достаточной длины, \TU/CMUTypewriterText(0)/m/n/14.4 LMS_ENVIRONMENT\TU/TimesNewRoman(0)/m/n/14.4 ,
- []
-
-
-Underfull \hbox (badness 4739) in paragraph at lines 16--17
-\TU/CMUTypewriterText(0)/m/n/14.4 LMS_CORS_ORIGINS \TU/TimesNewRoman(0)/m/n/14.4 в форме JSON-массива или перечне разрешённых
+Underfull \hbox (badness 4995) in paragraph at lines 16--17
+\TU/TimesNewRoman(0)/m/n/14.4 LMS_CORS_ORIGINS в форме JSON-массива или перечне разрешён-
  []
 
 
@@ -1887,10 +1816,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 17--18
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 17--18
-\TU/CMUTypewriterText(0)/m/n/14.4 LMS_ALLOW_TENANT_HEADER_FALLBACK=true \TU/TimesNewRoman(0)/m/n/14.4 для передачи кода орга-
+\TU/TimesNewRoman(0)/m/n/14.4 LMS_ALLOW_TENANT_HEADER_FALLBACK=true для передачи ко-
  []
 
-[86
+[84
 
 
 
@@ -1905,59 +1834,44 @@ Underfull \hbox (badness 2717) in paragraph at lines 30--31
 \TU/TimesNewRoman(0)/m/n/14.4 серверной части после проверки согласования существования таблицы
  []
 
-[87]
-Underfull \hbox (badness 10000) in paragraph at lines 56--57
-[]\TU/TimesNewRoman(0)/m/n/14.4 Для эмулятора Android использовать
+[85]
+Underfull \hbox (badness 1389) in paragraph at lines 56--57
+[]\TU/TimesNewRoman(0)/m/n/14.4 Для эмулятора Android использовать http://10.0.2.2:8000/api/v1; для
  []
 
 )
-Underfull \hbox (badness 2753) in paragraph at lines 69--33
-[]\TU/TimesNewRoman(0)/m/n/14.4 Согласование источников для CORS и базового URL веб-панели
+Underfull \hbox (badness 1325) in paragraph at lines 69--33
+\TU/TimesNewRoman(0)/m/n/14.4 чает https://coursum.online и https://www.coursum.online; параметр сборки
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 69--33
-\TU/TimesNewRoman(0)/m/n/14.4 включает \TU/CMUTypewriterText(0)/m/n/14.4 https://coursum.online \TU/TimesNewRoman(0)/m/n/14.4 и \TU/CMUTypewriterText(0)/m/n/14.4 https://www.coursum.online\TU/TimesNewRoman(0)/m/n/14.4 ;
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 69--33
-\TU/TimesNewRoman(0)/m/n/14.4 параметр сборки веб-клиента \TU/CMUTypewriterText(0)/m/n/14.4 VITE_API_BASE \TU/TimesNewRoman(0)/m/n/14.4 указывает на
- []
-
-[88] [89]
+[86] [87]
 \openout2 = `94-appendix5.aux'.
 
- (94-appendix5.tex
-Underfull \hbox (badness 10000) in paragraph at lines 8--9
-\TU/TimesNewRoman(0)/b/n/14.4 Листинг Д.1 – Фрагмент \TU/CMUTypewriterText(0)/b/n/14.4 evaluate_answer
- []
-
-(C:\Users\79673\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+ (94-appendix5.tex (C:\Users\79673\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
-) [90
+) [88
 
 
 
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 43--44
-\TU/TimesNewRoman(0)/b/n/14.4 Листинг Д.2 – Разрешённые теги и протоколы
+\TU/TimesNewRoman(0)/m/n/14.4 Листинг Д.2 – Разрешённые теги и протоколы
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 57--58
-\TU/TimesNewRoman(0)/b/n/14.4 Листинг Д.3 – Обработка учётной записи и токены
+\TU/TimesNewRoman(0)/m/n/14.4 Листинг Д.3 – Обработка учётной записи и токены
  []
 
-[91] [92]
+[89] [90]
 Underfull \hbox (badness 10000) in paragraph at lines 121--122
-\TU/TimesNewRoman(0)/b/n/14.4 Листинг Д.5 – Роли пользователя и организация
+\TU/TimesNewRoman(0)/m/n/14.4 Листинг Д.5 – Роли пользователя и организация
  []
 
 (C:\Users\79673\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
-) [93] [94]) [95] (rpz.aux (00-abstract.aux) (12-intro.aux) (20-analysis.aux) (30-design.aux) (40-impl.aux) (80-conclusion.aux) (81-biblio.aux) (90-appendix1.aux) (91-appendix2.aux) (92-appendix3.aux) (93-appendix4.aux) (94-appendix5.aux))
+) [91] [92]) [93] (rpz.aux (00-abstract.aux) (12-intro.aux) (20-analysis.aux) (30-design.aux) (40-impl.aux) (80-conclusion.aux) (81-biblio.aux) (90-appendix1.aux) (91-appendix2.aux) (92-appendix3.aux) (93-appendix4.aux) (94-appendix5.aux))
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -1968,15 +1882,15 @@ LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.5pt have occurred.
 
 Package rerunfilecheck Info: File `rpz.out' has not changed.
-(rerunfilecheck)             Checksum: 0C30901F2B4FE9D1867395730FE31BA8;9425.
+(rerunfilecheck)             Checksum: 52FBB1443604FBB4688A16BFAD8251A7;9417.
  ) 
 Here is how much of TeX's memory you used:
- 37396 strings out of 402982
- 734739 string characters out of 5448473
- 1628055 words of memory out of 5000000
- 65400 multiletter control sequences out of 15000+600000
- 639373 words of font info for 156 fonts, out of 8000000 for 9000
+ 37321 strings out of 402982
+ 733065 string characters out of 5448473
+ 1612562 words of memory out of 5000000
+ 65331 multiletter control sequences out of 15000+600000
+ 639325 words of font info for 150 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 132i,17n,135p,1098b,1946s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 132i,17n,135p,1098b,1947s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on rpz.xdv (95 pages, 1298644 bytes).
+Output written on rpz.xdv (93 pages, 1247572 bytes).

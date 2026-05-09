@@ -4,7 +4,7 @@
 \section*{Г.1 Подготовка среды}
 
 \begin{enumerate}
-  \item Установить Docker Engine версии актуальной ветви и утилиту Docker Compose (\texttt{docker compose}).
+  \item Установить Docker Engine версии актуальной ветви и утилиту Docker Compose (docker compose).
   \item По необходимости установить среду сборки Flutter и Android SDK или Xcode для сборки мобильного приложения слушателя.
   \item Клонировать исходный код по адресу \url{https://github.com/lunahobi/coursum}.
 \end{enumerate}
@@ -12,58 +12,58 @@
 \section*{Г.2 Файлы конфигурации}
 
 \begin{enumerate}
-  \item Скопировать \texttt{.env.example} из корня проекта (или каталога серверной части) во внутреннее имя \texttt{.env} согласно путям сборки Dockerfile.
-  \item Зафиксировать минимально: \texttt{POSTGRES\_PASSWORD}, \texttt{LMS\_SECRET\_KEY} достаточной длины, \texttt{LMS\_ENVIRONMENT}, \texttt{LMS\_CORS\_ORIGINS} в форме JSON-массива или перечне разрешённых источников.
-  \item Для режима локальной диагностики допускать \texttt{LMS\_ALLOW\_TENANT\_HEADER\_FALLBACK=true} для передачи кода организации заголовком \texttt{X-Tenant-Code} согласно реализации серверной части.
+  \item Скопировать .env.example из корня проекта (или каталога серверной части) во внутреннее имя .env согласно путям сборки Dockerfile.
+  \item Зафиксировать минимально: POSTGRES\_PASSWORD, LMS\_SECRET\_KEY достаточной длины, LMS\_ENVIRONMENT, LMS\_CORS\_ORIGINS в форме JSON-массива или перечне разрешённых источников.
+  \item Для режима локальной диагностики допускать LMS\_ALLOW\_TENANT\_HEADER\_FALLBACK=true для передачи кода организации заголовком X-Tenant-Code согласно реализации серверной части.
 \end{enumerate}
 
 \section*{Г.3 Запуск через Docker Compose}
 
 \begin{enumerate}
-  \item В корне каталога с исходным кодом выполнить \texttt{docker compose up {-}{-}build -d}.
-  \item Дождаться готовности службы базы данных: контейнер \texttt{db} использует \texttt{postgres:16-alpine} и публикуется на \texttt{127.0.0.1:5433}.
-  \item После выхода сценария entrypoint успешности миграций (\texttt{Alembic}) сервер слушает \texttt{127.0.0.1:8000}, сборка статики веб-панели экспонируется на \texttt{127.0.0.1:8081}.
+  \item В корне каталога с исходным кодом выполнить docker compose up {-}{-}build -d.
+  \item Дождаться готовности службы базы данных: контейнер db использует postgres:16-alpine и публикуется на 127.0.0.1:5433.
+  \item После выхода сценария entrypoint успешности миграций (Alembic) сервер слушает 127.0.0.1:8000, сборка статики веб-панели экспонируется на 127.0.0.1:8081.
 \end{enumerate}
 
 \section*{Г.4 Миграции схемы базы данных}
 
-Миграции запускает entrypoint-последовательность контейнерной серверной части после проверки согласования существования таблицы \texttt{alembic\_version}.
+Миграции запускает entrypoint-последовательность контейнерной серверной части после проверки согласования существования таблицы alembic\_version.
 
-При ручном запуске серверной части в каталоге \texttt{backend} допускается \texttt{alembic upgrade head} при активированном виртуальном окружении интерпретатора Python~3.\cite{alembic_docs,docker_compose_docs}
+При ручном запуске серверной части в каталоге backend допускается alembic upgrade head при активированном виртуальном окружении интерпретатора Python~3\cite{alembic_docs,docker_compose_docs}.
 
 \section*{Г.5 Первоначальные данные}
 
 \begin{enumerate}
-  \item Для профиля \texttt{tools} контейнерного набора выполнить
-  \\ \texttt{docker compose run {-}{-}rm {-}{-}profile tools seed}.
+  \item Для профиля tools контейнерного набора выполнить
+  \\ docker compose run {-}{-}rm {-}{-}profile tools seed.
 
-  Альтернативно локально в каталоге \texttt{backend} при готовности переменной \texttt{LMS\_DATABASE\_URL}: \texttt{python -m scripts.seed\_demo}.
+  Альтернативно локально в каталоге backend при готовности переменной LMS\_DATABASE\_URL: python -m scripts.seed\_demo.
   \item Проверить подключением к БД наличие демонстрационных ключей записей пользователей.
 \end{enumerate}
 
 \section*{Г.6 Проверки готовности}
 
 \begin{enumerate}
-  \item Открыть \texttt{GET http://localhost:8000/health}.
-  \item Открыть \texttt{GET http://localhost:8000/health/db}.
-  \item Обращаться к наблюдаемому REST интерфейсу приложения через префикс \texttt{/api/v1}.
+  \item Открыть GET http://localhost:8000/health.
+  \item Открыть GET http://localhost:8000/health/db.
+  \item Обращаться к наблюдаемому REST интерфейсу приложения через префикс /api/v1.
 \end{enumerate}
 
 \section*{Г.7 Мобильное приложение}
 
 \begin{enumerate}
-  \item Собрать в каталоге \texttt{mobile} командой \texttt{flutter run} с параметром \texttt{{-}{-}dart-define=API\_BASE=...}.
-  \item Для эмулятора Android использовать \texttt{http://10.0.2.2:8000/api/v1}; для устройства в LAN --- базовое имя узла сборки компьютера-разработчика.
+  \item Собрать в каталоге mobile командой flutter run с параметром {-}{-}dart-define=API\_BASE=....
+  \item Для эмулятора Android использовать http://10.0.2.2:8000/api/v1; для устройства в LAN --- базовое имя узла сборки компьютера-разработчика.
 \end{enumerate}
 
 \section*{Г.8 Остановка стенда}
 
-Для сохранности данных достаточно \texttt{docker compose stop}.
+Для сохранности данных достаточно docker compose stop.
 
-Для полного удаления контейнеров и томов PostgreSQL использовать \texttt{docker compose down -v}.
+Для полного удаления контейнеров и томов PostgreSQL использовать docker compose down -v.
 
-\section*{Г.9 Пример опытного развёртывания на VPS (домен \texttt{coursum.online})}
+\section*{Г.9 Пример опытного развёртывания на VPS (домен coursum.online)}
 
-В рамках демонстрации работоспособности программного комплекса в сети Интернет использовался арендованный виртуальный выделенный сервер (VPS). Зарегистрировано доменное имя \texttt{coursum.online}; для пользовательского веб-приложения и мобильного клиента базовый URL API в конфигурации сборки задаётся на узел \texttt{https://api.coursum.online/api/v1}. Выдача загруженных медиафайлов пользователям и слушателям осуществляется через тот же хост \texttt{api.coursum.online}, так как отдача каталога \texttt{/media} настроена в серверной части наряду с REST API.
+В рамках демонстрации работоспособности программного комплекса в сети Интернет использовался арендованный виртуальный выделенный сервер (VPS). Зарегистрировано доменное имя coursum.online; для пользовательского веб-приложения и мобильного клиента базовый URL API в конфигурации сборки задаётся на узел https://api.coursum.online/api/v1. Выдача загруженных медиафайлов пользователям и слушателям осуществляется через тот же хост api.coursum.online, так как отдача каталога /media настроена в серверной части наряду с REST API.
 
-Согласование источников для CORS и базового URL веб-панели задаётся переменными окружения (в проекте задано: \texttt{LMS\_CORS\_ORIGINS} включает \texttt{https://coursum.online} и \texttt{https://www.coursum.online}; параметр сборки веб-клиента \texttt{VITE\_API\_BASE} указывает на \texttt{https://api.coursum.online/api/v1}). Развёртывание на VPS выполнялось в контейнерном виде командой \texttt{docker compose up -d {-}{-}build} после настройки DNS-записей на IP-адрес сервера и выпуска TLS-сертификата (например, средствами обратного прокси с поддержкой ACME).
+Согласование источников для CORS и базового URL веб-панели задаётся переменными окружения (в проекте задано: LMS\_CORS\_ORIGINS включает https://coursum.online и https://www.coursum.online; параметр сборки веб-клиента VITE\_API\_BASE указывает на https://api.coursum.online/api/v1). Развёртывание на VPS выполнялось в контейнерном виде командой docker compose up -d {-}{-}build после настройки DNS-записей на IP-адрес сервера и выпуска TLS-сертификата (например, средствами обратного прокси с поддержкой ACME).

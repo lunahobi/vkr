@@ -1,6 +1,6 @@
-PWD c:\Users\79673\OneDrive\Документы\учёба\вкр\Шаблон ВКР
+PWD C:\Users\79673\OneDrive\Документы\учёба\вкр\Шаблон ВКР
 INPUT C:\Users\79673\AppData\Local\MiKTeX\miktex\data\le\xetex\xelatex.fmt
-INPUT c:\Users\79673\OneDrive\Документы\учёба\вкр\Шаблон ВКР\trebovaniya.tex
+INPUT trebovaniya.tex
 OUTPUT trebovaniya.log
 INPUT .\G7-32.cls
 INPUT G7-32.cls
@@ -199,6 +199,12 @@ INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\graphics\mathcolor.
 INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\pdfpages\ppxetex.def
 INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\pdfpages\ppxetex.def
 INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\pdfpages\ppxetex.def
+INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\pdflscape\pdflscape.sty
+INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\pdflscape\pdflscape.sty
+INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\pdflscape\pdflscape-nometadata.sty
+INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\pdflscape\pdflscape-nometadata.sty
+INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\graphics\lscape.sty
+INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\graphics\lscape.sty
 INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\grffile\grffile.sty
 INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\grffile\grffile.sty
 INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\pgf\frontendlayer\tikz.sty
@@ -346,26 +352,17 @@ INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\graphics\color.sty
 INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\mdframed\md-frame-0.mdf
 INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\mdframed\md-frame-0.mdf
 INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\mdframed\md-frame-0.mdf
-INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\minted\minted.sty
-INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\minted\minted.sty
-INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\generic\catchfile\catchfile.sty
-INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\generic\catchfile\catchfile.sty
-INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\fvextra\fvextra.sty
-INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\fvextra\fvextra.sty
-INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\fancyvrb\fancyvrb.sty
-INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\fancyvrb\fancyvrb.sty
-INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\upquote\upquote.sty
-INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\upquote\upquote.sty
-INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\base\textcomp.sty
-INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\base\textcomp.sty
-INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\lineno\lineno.sty
-INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\lineno\lineno.sty
-INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\latex2pydata\latex2pydata.sty
-INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\latex2pydata\latex2pydata.sty
-INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\pgfopts\pgfopts.sty
-INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\pgfopts\pgfopts.sty
-INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\tools\shellesc.sty
-INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\tools\shellesc.sty
+INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\listings\listings.sty
+INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\listings\listings.sty
+INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstpatch.sty
+INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstpatch.sty
+INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstpatch.sty
+INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstmisc.sty
+INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstmisc.sty
+INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstmisc.sty
+INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\listings\listings.cfg
+INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\listings\listings.cfg
+INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\listings\listings.cfg
 INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\pgflibraryarrows.meta.code.tex
 INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\pgflibraryarrows.meta.code.tex
 INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\pgflibraryarrows.meta.code.tex
@@ -373,6 +370,8 @@ INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer
 INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibraryshapes.geometric.code.tex
 INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\shapes\pgflibraryshapes.geometric.code.tex
 INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\shapes\pgflibraryshapes.geometric.code.tex
+INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarycalc.code.tex
+INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarycalc.code.tex
 INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibraryshapes.multipart.code.tex
 INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibraryshapes.multipart.code.tex
 INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\shapes\pgflibraryshapes.multipart.code.tex
@@ -393,12 +392,6 @@ INPUT trebovaniya.out
 INPUT .\trebovaniya.out
 INPUT .\trebovaniya.out
 OUTPUT trebovaniya.out
-INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\pdflscape\pdflscape.sty
-INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\pdflscape\pdflscape.sty
-INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\pdflscape\pdflscape-nometadata.sty
-INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\pdflscape\pdflscape-nometadata.sty
-INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\graphics\lscape.sty
-INPUT C:\Users\79673\AppData\Local\Programs\MiKTeX\tex\latex\graphics\lscape.sty
 INPUT extra\Title.pdf
 INPUT .\extra\Title.pdf
 INPUT .\extra\Title.pdf

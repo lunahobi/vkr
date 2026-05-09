@@ -71,7 +71,7 @@ citecolor=black, menucolor=black, filecolor=black,
 \setstretch{1.5}
 
 \newenvironment{compactlist}{%
-    \renewcommand{\labelenumi}{\hspace{13mm}\arabic{enumi}.}
+    \renewcommand{\labelenumi}{\hspace{6.5mm}\arabic{enumi})}
     \setlength{\topsep}{0pt}%
     \setlength{\partopsep}{0pt}%
     \setlength{\itemsep}{0pt}%
@@ -80,6 +80,16 @@ citecolor=black, menucolor=black, filecolor=black,
 }{%
     \end{enumerate}%
 }
+
+
+
+\makeatletter
+\renewcommand\theenumi{\arabic{enumi}}
+\renewcommand\labelenumi{\hspace{6.5mm}\theenumi)}
+\renewcommand\theenumii{\arabic{enumii}}
+\renewcommand\labelenumii{\hspace{6.5mm}\theenumii)}
+\renewcommand\p@enumii{\theenumi.}
+\makeatother
 
 \makeatletter
 \renewcommand*\l@section{\@dottedtocline{1}{0em}{2.3em}}

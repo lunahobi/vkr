@@ -1,0 +1,69 @@
+\chapter{{\fontsize{14pt}{21pt}\selectfont\MakeUppercase{���������� �. ����������� �� ������������ ������������ ���������}}}
+\label{app:deploy}
+
+\section*{�.1 ���������� �����}
+
+\begin{enumerate}
+  \item ���������� Docker Engine ������ ���������� ����� � ������� Docker Compose (docker compose).
+  \item �� ������������� ���������� ����� ������ Flutter � Android SDK ��� Xcode ��� ������ ���������� ���������� ���������.
+  \item ����������� �������� ��� �� ������ \url{https://github.com/lunahobi/coursum}.
+\end{enumerate}
+
+\section*{�.2 ����� ������������}
+
+\begin{enumerate}
+  \item ����������� .env.example �� ����� ������� (��� �������� ��������� �����) �� ���������� ��� .env �������� ����� ������ Dockerfile.
+  \item ������������� ����������: POSTGRES\_PASSWORD, LMS\_SECRET\_KEY ����������� �����, LMS\_ENVIRONMENT, LMS\_CORS\_ORIGINS � ����� JSON-������� ��� ������� ����������� ����������.
+  \item ��� ������ ��������� ����������� ��������� LMS\_ALLOW\_TENANT\_HEADER\_FALLBACK=true ��� �������� ���� ����������� ���������� X-Tenant-Code �������� ���������� ��������� �����.
+\end{enumerate}
+
+\section*{�.3 ������ ����� Docker Compose}
+
+\begin{enumerate}
+  \item � ����� �������� � �������� ����� ��������� docker compose up {-}{-}build -d.
+  \item ��������� ���������� ������ ���� ������: ��������� db ���������� postgres:16-alpine � ����������� �� 127.0.0.1:5433.
+  \item ����� ������ �������� entrypoint ���������� �������� (Alembic) ������ ������� 127.0.0.1:8000, ������ ������� ���-������ ������������� �� 127.0.0.1:8081.
+\end{enumerate}
+
+\section*{�.4 �������� ����� ���� ������}
+
+�������� ��������� entrypoint-������������������ ������������ ��������� ����� ����� �������� ������������ ������������� ������� alembic\_version.
+
+��� ������ ������� ��������� ����� � �������� backend ����������� alembic upgrade head ��� �������������� ����������� ��������� �������������� Python~3\cite{alembic_docs,docker_compose_docs}.
+
+\section*{�.5 �������������� ������}
+
+\begin{enumerate}
+  \item ��� ������� tools ������������� ������ ���������
+  \\ docker compose run {-}{-}rm {-}{-}profile tools seed.
+
+  ������������� �������� � �������� backend ��� ���������� ���������� LMS\_DATABASE\_URL: python -m scripts.seed\_demo.
+  \item ��������� ������������ � �� ������� ���������������� ������ ������� �������������.
+\end{enumerate}
+
+\section*{�.6 �������� ����������}
+
+\begin{enumerate}
+  \item ������� GET http://localhost:8000/health.
+  \item ������� GET http://localhost:8000/health/db.
+  \item ���������� � ������������ REST ���������� ���������� ����� ������� /api/v1.
+\end{enumerate}
+
+\section*{�.7 ��������� ����������}
+
+\begin{enumerate}
+  \item ������� � �������� mobile �������� flutter run � ���������� {-}{-}dart-define=API\_BASE=....
+  \item ��� ��������� Android ������������ http://10.0.2.2:8000/api/v1; ��� ���������� � LAN --- ������� ��� ���� ������ ����������-������������.
+\end{enumerate}
+
+\section*{�.8 ��������� ������}
+
+��� ����������� ������ ���������� docker compose stop.
+
+��� ������� �������� ����������� � ����� PostgreSQL ������������ docker compose down -v.
+
+\section*{�.9 ������ �������� ������������ �� VPS (����� coursum.online)}
+
+� ������ ������������ ����������������� ������������ ��������� � ���� �������� ������������� ������������ ����������� ���������� ������ (VPS). ���������������� �������� ��� coursum.online; ��� ����������������� ���-���������� � ���������� ������� ������� URL API � ������������ ������ ������� �� ���� https://api.coursum.online/api/v1. ������ ����������� ����������� ������������� � ���������� �������������� ����� ��� �� ���� api.coursum.online, ��� ��� ������ �������� /media ��������� � ��������� ����� ������ � REST API.
+
+������������ ���������� ��� CORS � �������� URL ���-������ ������� ����������� ��������� (� ������� ������: LMS\_CORS\_ORIGINS �������� https://coursum.online � https://www.coursum.online; �������� ������ ���-������� VITE\_API\_BASE ��������� �� https://api.coursum.online/api/v1). ������������ �� VPS ����������� � ������������ ���� �������� docker compose up -d {-}{-}build ����� ��������� DNS-������� �� IP-����� ������� � ������� TLS-����������� (��������, ���������� ��������� ������ � ���������� ACME).

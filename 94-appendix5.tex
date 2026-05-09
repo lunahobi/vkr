@@ -1,11 +1,11 @@
 \chapter{{\fontsize{14pt}{21pt}\selectfont\MakeUppercase{Приложение Д. Листинги ключевого кода}}}
 \label{app:listings}
 
-Ниже приведены иллюстративные фрагменты исходных текстов программного комплекса; полный набор файлов и история изменений находятся в репозитории \url{https://github.com/lunahobi/coursum}. Фрагменты сокращены для читаемости, секретные константы не воспроизводятся. Нумерация листингов относится к настоящему приложению.\cite{fastapi_docs,flutter_docs,pydantic_docs,docker_compose_docs}
+Ниже приведены иллюстративные фрагменты исходных текстов программного комплекса; полный набор файлов и история изменений находятся в репозитории \url{https://github.com/lunahobi/coursum}. Фрагменты сокращены для читаемости, секретные константы не воспроизводятся. Нумерация листингов относится к настоящему приложению\cite{fastapi_docs,flutter_docs,pydantic_docs,docker_compose_docs}.
 
 \section*{Д.1 Алгоритм адаптивного теста (дискретное изменение сложности ответом)}
 
-\noindent\textbf{Листинг Д.1 -- Фрагмент \texttt{evaluate\_answer} (\texttt{backend/app/services/adaptive.py})}
+\noindent{}Листинг Д.1 -- Фрагмент evaluate\_answer (backend/app/services/adaptive.py)
 
 \begin{lstlisting}[language=Python]
 def evaluate_answer(
@@ -40,7 +40,7 @@ def evaluate_answer(
 
 \section*{Д.2 Ограничение HTML содержания урока при проигрывании}
 
-\noindent\textbf{Листинг Д.2 -- Разрешённые теги и протоколы (\texttt{backend/app/services/lesson\_player.py})}
+\noindent{}Листинг Д.2 -- Разрешённые теги и протоколы (backend/app/services/lesson\_player.py)
 
 \begin{lstlisting}[language=Python]
 ALLOWED_HTML_TAGS = [
@@ -54,7 +54,7 @@ ALLOWED_PROTOCOLS = ["http", "https"]
 
 \section*{Д.3 Регистрация и выпуск JWT}
 
-\noindent\textbf{Листинг Д.3 -- Обработка учётной записи и токены (\texttt{backend/app/services/auth.py})}
+\noindent{}Листинг Д.3 -- Обработка учётной записи и токены (backend/app/services/auth.py)
 
 \begin{lstlisting}[language=Python]
 def register_user(db: Session, *, email: str, full_name: str, password: str) -> User:
@@ -81,7 +81,7 @@ def issue_tokens(db: Session, user: User) -> tuple[str, str]:
 
 \section*{Д.4 Обработчик старта попытки на маршруте тестирования}
 
-\noindent\textbf{Листинг Д.4 -- Старт попытки (\texttt{backend/app/api/routes/tests.py})}
+\noindent{}Листинг Д.4 -- Старт попытки (backend/app/api/routes/tests.py)
 
 \begin{lstlisting}[language=Python]
 @router.post("/tests/{test_id}/start")
@@ -118,7 +118,7 @@ def start_test(
 
 \section*{Д.5 Ключевые сущности ролевой модели данных}
 
-\noindent\textbf{Листинг Д.5 -- Роли пользователя и организация (\texttt{backend/app/models/models.py})}
+\noindent{}Листинг Д.5 -- Роли пользователя и организация (backend/app/models/models.py)
 
 \begin{lstlisting}[language=Python]
 class RoleName(StrEnum):
@@ -139,7 +139,7 @@ class User(Base):
 
 \section*{Д.6 Веб-панель: редактор тестирования преподавателя}
 
-\noindent\textbf{Листинг Д.6 -- Компонент \texttt{TestsPage} (\texttt{web/src/app-core.tsx}, фрагмент)}
+\noindent{}Листинг Д.6 -- Компонент TestsPage (web/src/app-core.tsx, фрагмент)
 
 \begin{lstlisting}[language=Java]
 export function TestsPage({ session }: { session: SessionState }) {
@@ -163,7 +163,7 @@ export function TestsPage({ session }: { session: SessionState }) {
 
 \section*{Д.7 Мобильное приложение: экран попытки}
 
-\noindent\textbf{Листинг Д.7 -- \texttt{TestFlowScreen} (\texttt{mobile/lib/main.dart}, фрагмент)}
+\noindent{}Листинг Д.7 -- TestFlowScreen (mobile/lib/main.dart, фрагмент)
 
 \begin{lstlisting}[language=Java]
 class TestFlowScreen extends StatefulWidget {
@@ -193,7 +193,7 @@ class _TestFlowScreenState extends State<TestFlowScreen> {
 
 \section*{Д.8 Оркестрация контейнеров демонстрационного контура}
 
-\noindent\textbf{Листинг Д.8 -- Сервисы \texttt{docker-compose.yml}, фрагмент}
+\noindent{}Листинг Д.8 -- Сервисы docker-compose.yml, фрагмент
 
 \begin{lstlisting}
 services:
