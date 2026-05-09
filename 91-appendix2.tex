@@ -36,10 +36,11 @@
 \caption{Результаты испытаний по тест-кейсам критического пути}
 \label{tab:appb-tests}
 {\setstretch{1}\fontsize{11pt}{13pt}\selectfont
-\setlength{\tabcolsep}{3pt}
-\begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}p{10mm}|>{\RaggedRight\arraybackslash}p{38mm}|>{\RaggedRight\arraybackslash}X|>{\RaggedRight\arraybackslash}p{28mm}|>{\centering\arraybackslash}p{18mm}|}
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}p{10mm}|>{\RaggedRight\arraybackslash}p{34mm}|>{\RaggedRight\arraybackslash}X|>{\RaggedRight\arraybackslash}p{26mm}|>{\centering\arraybackslash}p{18mm}|}
 \hline
-ID & Описание & Шаги и ожидаемый результат & Фактический результат & Статус \\
+{\centering\arraybackslash\textbf{ID}} & {\centering\arraybackslash\textbf{Описание}} & {\centering\arraybackslash\textbf{Шаги и ожидаемый результат}} & {\centering\arraybackslash\textbf{Фактический результат}} & {\centering\arraybackslash\textbf{Статус}} \\
 \hline
 TC-01 & Регистрация пользователя & POST /auth/register, создание записи пользователя & создан & ОК \\
 \hline

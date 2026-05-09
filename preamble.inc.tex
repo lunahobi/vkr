@@ -66,6 +66,13 @@ citecolor=black, menucolor=black, filecolor=black,
 \usepackage{array} % расширенные возможности для работы с таблицами
 \usepackage{tabularx} % автоматический подбор ширины столбцов
 \usepackage{dcolumn} % выравнивание чисел по разделителю
+\usepackage{makecell} % переносы строк в заголовках таблиц
+
+\setlength{\tabcolsep}{6pt}
+\setlength{\extrarowheight}{3pt}
+\renewcommand{\arraystretch}{1.15}
+\renewcommand\theadalign{cc}
+\renewcommand\theadfont{\bfseries}
 
 \usepackage{setspace} % полуторный интервал (нормоконтроль п. 25)
 \setstretch{1.5}
@@ -81,13 +88,20 @@ citecolor=black, menucolor=black, filecolor=black,
     \end{enumerate}%
 }
 
+\newenvironment{parenlist}{%
+    \renewcommand{\labelenumi}{\hspace{6.5mm}\arabic{enumi})}
+    \begin{enumerate}%
+}{%
+    \end{enumerate}%
+}
+
 
 
 \makeatletter
 \renewcommand\theenumi{\arabic{enumi}}
-\renewcommand\labelenumi{\hspace{6.5mm}\theenumi)}
+\renewcommand\labelenumi{\hspace{6.5mm}\theenumi.}
 \renewcommand\theenumii{\arabic{enumii}}
-\renewcommand\labelenumii{\hspace{6.5mm}\theenumii)}
+\renewcommand\labelenumii{\hspace{6.5mm}\theenumi.\theenumii.}
 \renewcommand\p@enumii{\theenumi.}
 \makeatother
 
@@ -110,7 +124,7 @@ citecolor=black, menucolor=black, filecolor=black,
 \setlength{\intextsep}{7pt}
 
 \captionsetup{aboveskip=7pt,belowskip=0pt,justification=centerednohyphen,singlelinecheck=false,labelsep=shortdash}
-\captionsetup[table]{justification=RaggedRight,singlelinecheck=false}
+\captionsetup[table]{justification=raggedright,singlelinecheck=false,format=plain,margin=0pt,indention=0pt,aboveskip=0pt,belowskip=5pt}
 \captionsetup[figure]{justification=centerednohyphen,singlelinecheck=false}
 
 \usepackage{chngcntr}
