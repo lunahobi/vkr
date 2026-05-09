@@ -29,44 +29,44 @@ A level-1 auxiliary file: 93-appendix4.aux
 Reallocating 'name_of_file' (item size: 1) to 17 items.
 A level-1 auxiliary file: 94-appendix5.aux
 Database file #1: rpz.bib
-You've used 53 entries,
+You've used 55 entries,
             2591 wiz_defined-function locations,
-            851 strings with 13931 characters,
-and the built_in function-call counts, 10067 in all, are:
-= -- 1365
-> -- 152
+            860 strings with 14078 characters,
+and the built_in function-call counts, 10381 in all, are:
+= -- 1411
+> -- 154
 < -- 16
-+ -- 82
++ -- 84
 - -- 29
-* -- 304
-:= -- 998
-add.period$ -- 191
-call.type$ -- 53
+* -- 316
+:= -- 1026
+add.period$ -- 201
+call.type$ -- 55
 change.case$ -- 0
 chr.to.int$ -- 0
-cite$ -- 53
-duplicate$ -- 558
-empty$ -- 1302
-format.name$ -- 54
-if$ -- 2789
+cite$ -- 55
+duplicate$ -- 574
+empty$ -- 1336
+format.name$ -- 56
+if$ -- 2871
 int.to.chr$ -- 0
-int.to.str$ -- 53
+int.to.str$ -- 55
 missing$ -- 0
-newline$ -- 335
+newline$ -- 349
 num.names$ -- 33
-pop$ -- 309
+pop$ -- 315
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 140
+skip$ -- 142
 stack$ -- 0
 substring$ -- 0
-swap$ -- 312
+swap$ -- 326
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
 while$ -- 17
-width$ -- 55
-write$ -- 866
+width$ -- 57
+write$ -- 902

@@ -14,45 +14,6 @@
   09.03.03). --
 \newblock 2021.
 
-\bibitem{gost7322017}
-\selectlanguageifdefined{english}
-ГОСТ 7.32---2017. Система стандартов по
-  информации, библиотечному и
-  издательскому делу. Отчёт о
-  научно-исследовательской работе.
-  Структура и правила оформления. --
-\newblock Москва: Стандартинформ, 2017.
-
-\bibitem{gost1920178}
-\selectlanguageifdefined{english}
-ГОСТ 19.201---78. Единая система программной
-  документации. Техническое задание.
-  Требования к содержанию и оформлению. --
-\newblock Москва: ИПК Издательство стандартов,
-  1978.
-
-\bibitem{gost1930179}
-\selectlanguageifdefined{english}
-ГОСТ 19.301---79. Единая система программной
-  документации. Программа и методика
-  испытаний. Требования к содержанию и
-  оформлению. --
-\newblock Москва: ИПК Издательство стандартов,
-  1979.
-
-\bibitem{van_der_linden1997}
-\selectlanguageifdefined{english}
-Handbook of Modern Item Response Theory~/ Ed. by Wim~J.~van~der~Linden,
-  Ronald~K.~Hambleton. --
-\newblock New York: Springer, 1997.
-
-\bibitem{wainer2000}
-\selectlanguageifdefined{english}
-Computerized Adaptive Testing: A Primer~/ Howard~Wainer, Neil~J.~Dorans,
-  David~Eignor et~al. --
-\newblock 2 edition. --
-\newblock Mahwah, NJ: Lawrence Erlbaum Associates, 2000.
-
 \bibitem{mobile_learning_solutions_2024}
 \selectlanguageifdefined{english}
 {{Vocal Media}}. Mobile Learning Solutions in 2024: Trends and Innovations. --
@@ -99,14 +60,12 @@ Computerized Adaptive Testing: A Primer~/ Howard~Wainer, Neil~J.~Dorans,
 \newblock 3 edition. --
 \newblock Москва: ИД «ФОРУМ», 2022.
 
-\bibitem{ulikov_testing_2024}
+\bibitem{kulikov_testing_2024}
 \selectlanguageifdefined{english}
-{Куликов,~Святослав~Александрович}.
-  Тестирование программного обеспечения.
-  Базовый курс~/
-  Святослав~Александрович~Куликов. --
-\newblock 3 edition. --
-\newblock Москва: Лаборатория знаний, 2024.
+{Куликов,~С.~С.} Тестирование программного
+  обеспечения. Базовый курс~/ С.~С.~Куликов. --
+\newblock 3-е изд. edition. --
+\newblock Минск: EPAM Systems, 2024.
 
 \bibitem{gost7052008}
 \selectlanguageifdefined{english}
@@ -116,6 +75,15 @@ Computerized Adaptive Testing: A Primer~/ Howard~Wainer, Neil~J.~Dorans,
   ссылка. Общие требования и правила
   составления. --
 \newblock Москва: Стандартинформ, 2008.
+
+\bibitem{gost7322017}
+\selectlanguageifdefined{english}
+ГОСТ 7.32---2017. Система стандартов по
+  информации, библиотечному и
+  издательскому делу. Отчёт о
+  научно-исследовательской работе.
+  Структура и правила оформления. --
+\newblock Москва: Стандартинформ, 2017.
 
 \bibitem{gost712003}
 \selectlanguageifdefined{english}
@@ -156,6 +124,23 @@ Computerized Adaptive Testing: A Primer~/ Howard~Wainer, Neil~J.~Dorans,
 ГОСТ Р 50922---2006. Защита информации. Основные
   термины и определения. --
 \newblock Москва: Стандартинформ, 2006.
+
+\bibitem{gost1920178}
+\selectlanguageifdefined{english}
+ГОСТ 19.201---78. Единая система программной
+  документации. Техническое задание.
+  Требования к содержанию и оформлению. --
+\newblock Москва: ИПК Издательство стандартов,
+  1978.
+
+\bibitem{gost1930179}
+\selectlanguageifdefined{english}
+ГОСТ 19.301---79. Единая система программной
+  документации. Программа и методика
+  испытаний. Требования к содержанию и
+  оформлению. --
+\newblock Москва: ИПК Издательство стандартов,
+  1979.
 
 \bibitem{fz152}
 \selectlanguageifdefined{english}
@@ -198,6 +183,19 @@ Computerized Adaptive Testing: A Primer~/ Howard~Wainer, Neil~J.~Dorans,
   Cem~Kaner, James~Bach, Bret~Pettichord. --
 \newblock 1 edition. --
 \newblock New York: John Wiley \& Sons, 2002.
+
+\bibitem{van_der_linden1997}
+\selectlanguageifdefined{english}
+Handbook of Modern Item Response Theory~/ Ed. by Wim~J.~van~der~Linden,
+  Ronald~K.~Hambleton. --
+\newblock New York: Springer, 1997.
+
+\bibitem{wainer2000}
+\selectlanguageifdefined{english}
+Computerized Adaptive Testing: A Primer~/ Howard~Wainer, Neil~J.~Dorans,
+  David~Eignor et~al. --
+\newblock 2 edition. --
+\newblock Mahwah, NJ: Lawrence Erlbaum Associates, 2000.
 
 \bibitem{lord1980}
 \selectlanguageifdefined{english}
@@ -284,6 +282,23 @@ MoodleCloud: Cloud LMS. --
 \newblock
   \url{https://www.docebo.com/learning-network/blog/adaptive-learning/}. --
 \newblock 2026. --
+\newblock Электронный ресурс. Дата обращения:
+  15.02.2026.
+
+\bibitem{educause_adaptive_2016}
+\selectlanguageifdefined{english}
+{Feldstein,~Michael}. Adaptive Learning Systems: Surviving the Storm. --
+\newblock EDUCAUSE Review. --
+\newblock 2016. --
+\newblock Электронный ресурс. URL:
+  https://er.educause.edu/articles/2016/10/adaptive-learning-systems-surviving-the-storm.
+  Дата обращения: 15.02.2026.
+
+\bibitem{discovery_intelligent_adaptive}
+\selectlanguageifdefined{english}
+{{Discovery Education}}. Intelligent Adaptive Learning. --
+\newblock \url{https://info.discoveryeducation.com/}. --
+\newblock 2025. --
 \newblock Электронный ресурс. Дата обращения:
   15.02.2026.
 
@@ -407,27 +422,26 @@ ISO/IEC/IEEE 29119-2:2021. Software and systems engineering --- Software
 \newblock Электронный ресурс. Дата обращения:
   08.05.2026.
 
-\bibitem{educause_adaptive_2016}
-\selectlanguageifdefined{english}
-{Feldstein,~Michael}. Adaptive Learning Systems: Surviving the Storm. --
-\newblock EDUCAUSE Review. --
-\newblock 2016. --
-\newblock Электронный ресурс. URL:
-  https://er.educause.edu/articles/2016/10/adaptive-learning-systems-surviving-the-storm.
-  Дата обращения: 15.02.2026.
-
-\bibitem{discovery_intelligent_adaptive}
-\selectlanguageifdefined{english}
-{{Discovery Education}}. Intelligent Adaptive Learning. --
-\newblock \url{https://info.discoveryeducation.com/}. --
-\newblock 2025. --
-\newblock Электронный ресурс. Дата обращения:
-  15.02.2026.
-
 \bibitem{sutherland2016scrum}
 \selectlanguageifdefined{english}
 {Сазерленд,~Джефф}. Scrum. Революционный метод
   управления проектами~/ Джефф~Сазерленд. --
 \newblock Москва: Манн, Иванов и Фербер, 2016.
+
+\bibitem{owasp_asvs}
+\selectlanguageifdefined{english}
+{{OWASP}}. Application Security Verification Standard (ASVS). --
+\newblock \url{https://owasp.org/ASVS/}. --
+\newblock 2025. --
+\newblock Электронный ресурс. Дата обращения:
+  08.05.2026.
+
+\bibitem{alembic_docs}
+\selectlanguageifdefined{english}
+{{SQLAlchemy ORM}}. Alembic Migrations Documentation. --
+\newblock \url{https://alembic.sqlalchemy.org/}. --
+\newblock 2026. --
+\newblock Электронный ресурс. Дата обращения:
+  08.05.2026.
 
 \end{thebibliography}
